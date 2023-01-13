@@ -1,6 +1,6 @@
 # Advent of Code 2019
 
-[Main Page](https://adventofcode.com/2019)
+[Advent of Code Page](https://adventofcode.com/2019)
 
 | Day |                               Problem Page                                | Difficulty |       Solution Page       |              :wink:               | Blog |
 |:---:|:-------------------------------------------------------------------------:| ---: |:-------------------------:|:---------------------------------:| :---: |

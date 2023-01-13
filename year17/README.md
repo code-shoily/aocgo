@@ -1,6 +1,6 @@
 # Advent of Code 2017
 
-[Main Page](https://adventofcode.com/2017)
+[Advent of Code Page](https://adventofcode.com/2017)
 
 | Day |                                  Problem Page                                  | Difficulty |       Solution Page       |                 :wink:                 | Blog |
 |:---:|:------------------------------------------------------------------------------:| ---: |:-------------------------:|:--------------------------------------:| :---: |

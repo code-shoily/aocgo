@@ -1,6 +1,6 @@
 # Advent of Code 2020
 
-[Main Page](https://adventofcode.com/2020)
+[Advent of Code Page](https://adventofcode.com/2020)
 
 | Day |                        Problem Page                        | Difficulty |        Solution Page        |                    :wink:                     | Blog |
 |:--:|:----------------------------------------------------------:| ---: |:---------------------------:|:---------------------------------------------:| :---: |

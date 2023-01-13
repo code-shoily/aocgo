@@ -1,6 +1,6 @@
 # Advent of Code 2021
 
-[Main Page](https://adventofcode.com/2021)
+[Advent of Code Page](https://adventofcode.com/2021)
 
 | Day |                    Problem Page                    | Difficulty |       Solution Page       |      ;wink:      | Blog |
 |:--:|:--------------------------------------------------:| ---: |:-------------------------:|:----------------:| :---: |
