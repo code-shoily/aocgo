@@ -30,18 +30,18 @@ func solve(input string) (int, int) {
 }
 
 func solvePart1(guards map[int]Guard) int {
-	maxSleepingMinutes := math.MinInt
-	var maxSleeper Guard
+	maxSleepTime := math.MinInt
+	var superSleeper Guard
 
 	for _, guard := range guards {
-		if guard.totalAsleep() > maxSleepingMinutes {
-			maxSleepingMinutes = guard.totalAsleep()
-			maxSleeper = guard
+		if guard.totalSleepTime() > maxSleepTime {
+			maxSleepTime = guard.totalSleepTime()
+			superSleeper = guard
 		}
 	}
 
-	minutes, _ := maxSleeper.minuteAsleepMost()
-	return minutes * maxSleeper.id
+	minuteAsleepMost, _ := superSleeper.minuteAsleepMost()
+	return minuteAsleepMost * superSleeper.id
 }
 
 func solvePart2(guards map[int]Guard) int {
@@ -82,7 +82,7 @@ func parse(input string) map[int]Guard {
 			if _, ok := guards[guardId]; ok {
 				currentGuard = guardId
 			} else {
-				guards[guardId] = Guard{id: guardId, sleepingMinutes: make(map[int]int)}
+				guards[guardId] = Guard{id: guardId, minutesAsleep: make([]int, 60)}
 				currentGuard = guardId
 			}
 		}
@@ -107,11 +107,11 @@ func parseEvent(eventLine string) Event {
 	eventLine = stripBrackets(eventLine)
 	tokens := strings.SplitN(eventLine, " ", 3)
 
-	date := fmt.Sprintf("%s:%s", tokens[0], tokens[1])
-	minute := extractMinute(tokens[1])
-	eventType := parseEventType(tokens[2])
-
-	return Event{date, minute, eventType}
+	return Event{
+		fmt.Sprintf("%s:%s", tokens[0], tokens[1]),
+		extractMinute(tokens[1]),
+		parseEventType(tokens[2]),
+	}
 }
 
 func parseEventType(rawEventType string) int {
@@ -149,31 +149,29 @@ type Event struct {
 }
 
 type Guard struct {
-	id              int
-	sleepingMinutes map[int]int
+	id            int
+	minutesAsleep []int
 }
 
 func (guard *Guard) sleep(from, to int) {
 	for i := from; i < to; i++ {
-		guard.sleepingMinutes[i]++
+		guard.minutesAsleep[i]++
 	}
 }
 
-func (guard *Guard) totalAsleep() (total int) {
-	for _, freq := range guard.sleepingMinutes {
+func (guard *Guard) totalSleepTime() (total int) {
+	for _, freq := range guard.minutesAsleep {
 		total += freq
 	}
 
 	return total
 }
 
-func (guard *Guard) minuteAsleepMost() (int, int) {
-	var sleepyMinute int
-	minutesAsleep := math.MinInt
-	for minute, freq := range guard.sleepingMinutes {
-		if freq > minutesAsleep {
+func (guard *Guard) minuteAsleepMost() (sleepyMinute int, minutesAsleep int) {
+	for minute, tally := range guard.minutesAsleep {
+		if tally > minutesAsleep {
 			sleepyMinute = minute
-			minutesAsleep = freq
+			minutesAsleep = tally
 		}
 	}
 
