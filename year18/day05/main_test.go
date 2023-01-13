@@ -18,16 +18,14 @@ func TestSolve(t *testing.T) {
 }
 
 func BenchmarkSolvePart1(b *testing.B) {
-	data := parse(input)
 	for i := 0; i < b.N; i++ {
-		solvePart1(data)
+		solvePart1(input)
 	}
 }
 
 func BenchmarkSolvePart2(b *testing.B) {
-	data := parse(input)
 	for i := 0; i < b.N; i++ {
-		solvePart2(data)
+		solvePart2(input)
 	}
 }
 
