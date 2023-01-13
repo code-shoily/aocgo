@@ -10,7 +10,7 @@ More about Advent of Code here: [https://adventofcode.com/2022/about](https://ad
 
 I have not done any `make-fu` yet. So as of today, the way to run this is just `cd` into the `year` and `dayXX` and `go test` and `go run main.go`. I will automate things later.
 
-| Day | [2015](2015/README.md) | [2016](2016/README.md) | [2017](2017/README.md) | [2018](2018/README.md) | 2019 | 2020 | 2021 | 2022 |
+| Day | [2015](2015/) | [2016](2016/) | [2017](2017/) | [2018](2018/) | 2019 | 2020 | 2021 | 2022 |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |1| :1st_place_medal: | :1st_place_medal: |:1st_place_medal: |:1st_place_medal: | | | | |
 |2| | | | | | | | |
