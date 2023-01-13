@@ -13,13 +13,7 @@ var input string
 
 type position = [2]int
 
-var startingPosition = [2]int{0, 0}
-var movementFor = map[string]position{
-	">": {1, 0},
-	"<": {-1, 0},
-	"^": {0, 1},
-	"v": {0, -1},
-}
+var firstHouse = [2]int{0, 0}
 
 // Run prints out the result of the solution.
 func Run() {
@@ -32,44 +26,44 @@ func solve(input string) (int, int) {
 }
 
 func solvePart1(directions []string) int {
-	var visits = make(map[position]int)
-	visited := startingPosition
+	var houses = make(map[position]int)
+	currentHouse := firstHouse
 
-	for _, dir := range directions {
-		visits[visited]++
-		movement := movementFor[dir]
-		visited = [2]int{
-			visited[0] + movement[0],
-			visited[1] + movement[1],
-		}
+	for _, direction := range directions {
+		houses[currentHouse]++
+		updateHouse(&currentHouse, direction)
 	}
 
-	return len(visits)
+	return len(houses)
 }
 
 func solvePart2(directions []string) int {
-	var visits = make(map[position]int)
-	visited := startingPosition
+	var houses = make(map[position]int)
+	currentHouse := firstHouse
 
 	for i := 0; i < len(directions); i += 2 {
-		visits[visited]++
-		movement := movementFor[directions[i]]
-		visited = [2]int{
-			visited[0] + movement[0],
-			visited[1] + movement[1],
-		}
+		houses[currentHouse]++
+		updateHouse(&currentHouse, directions[i])
 	}
 
-	visited = startingPosition
+	currentHouse = firstHouse
 
-	for j := 1; j < len(directions); j += 2 {
-		visits[visited]++
-		movement := movementFor[directions[j]]
-		visited = [2]int{
-			visited[0] + movement[0],
-			visited[1] + movement[1],
-		}
+	for i := 1; i < len(directions); i += 2 {
+		houses[currentHouse]++
+		updateHouse(&currentHouse, directions[i])
 	}
 
-	return len(visits)
+	return len(houses)
+}
+
+func updateHouse(currentHouse *[2]int, direction string) {
+	visitUnit := map[string]position{
+		">": {1, 0},
+		"<": {-1, 0},
+		"^": {0, 1},
+		"v": {0, -1},
+	}[direction]
+
+	currentHouse[0] += visitUnit[0]
+	currentHouse[1] += visitUnit[1]
 }
