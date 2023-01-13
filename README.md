@@ -13,7 +13,7 @@ I have not done any `make-fu` yet. So as of today, the way to run this is just `
 | Day | [2015](2015/) | [2016](2016/) | [2017](2017/) | [2018](2018/) | [2019](2019/) | [2020](2020/) | [2021](2021/) | [2022](2022/) |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |1| :1st_place_medal: | :1st_place_medal: |:1st_place_medal: |:1st_place_medal: | :1st_place_medal:|:1st_place_medal: |:1st_place_medal: |:1st_place_medal: |
-|2| | | | | | | | |
+|2| :1st_place_medal: | | | | | | | |
 |3| | | | | | | | |
 |4| | | | | | | | |
 |5| | | | | | | | |
