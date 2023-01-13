@@ -3,6 +3,7 @@ package day01
 import (
 	_ "embed"
 	"fmt"
+	"github.com/code-shoily/aocgo/algo"
 	"github.com/code-shoily/aocgo/utils"
 	"sort"
 )
@@ -23,7 +24,7 @@ func solve(input string) (int, int) {
 }
 
 func solvePart1(expenses []int) int {
-	if a, b, ok := TwoSum(expenses, 2020); ok {
+	if a, b, ok := algo.TwoSum(expenses, 2020); ok {
 		return a * b
 	}
 
@@ -31,35 +32,11 @@ func solvePart1(expenses []int) int {
 }
 
 func solvePart2(expenses []int) int {
-	for current := 0; current < len(expenses); current++ {
-		currentExpense := expenses[current]
-		remaining := 2020 - currentExpense
-
-		if a, b, ok := TwoSum(expenses[current+1:], remaining); ok {
-			return a * b * currentExpense
-		}
+	if a, b, c, ok := algo.ThreeSum(expenses, 2020); ok {
+		return a * b * c
 	}
 
 	panic("Nothing sums to 2020")
-}
-
-func TwoSum(sortedData []int, target int) (int, int, bool) {
-	left := 0
-	right := len(sortedData) - 1
-
-	for left < right {
-		currentTotal := sortedData[left] + sortedData[right]
-		switch {
-		case currentTotal > target:
-			right--
-		case currentTotal < target:
-			left++
-		case currentTotal == target:
-			return sortedData[left], sortedData[right], true
-		}
-	}
-
-	return -1, -1, false
 }
 
 func parse(input string) (expenses []int) {
