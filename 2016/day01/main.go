@@ -10,27 +10,13 @@ import (
 //go:embed input.txt
 var input string
 
-type Instruction struct {
-	direction string
-	steps     int
+func main() {
+	fmt.Println(solve(input))
 }
 
-func parse(input string) []Instruction {
-	var locations []Instruction
-	for _, location := range strings.Split(input, ", ") {
-		locations = append(locations, parseLocation(location))
-	}
-
-	return locations
-}
-
-func parseLocation(location string) Instruction {
-	parsedLine := strings.SplitN(location, "", 2)
-	if steps, err := strconv.Atoi(parsedLine[1]); err == nil {
-		return Instruction{parsedLine[0], steps}
-	}
-
-	panic("Invalid format")
+func solve(input string) (int, int) {
+	instructions := parse(input)
+	return solvePart1(instructions), solvePart2(instructions)
 }
 
 func solvePart1(instructions []Instruction) int {
@@ -72,11 +58,25 @@ func solvePart2(instructions []Instruction) int {
 	panic("No points visited twice")
 }
 
-func solve(input string) (int, int) {
-	instructions := parse(input)
-	return solvePart1(instructions), solvePart2(instructions)
+type Instruction struct {
+	direction string
+	steps     int
 }
 
-func main() {
-	fmt.Println(solve(input))
+func parse(input string) []Instruction {
+	var locations []Instruction
+	for _, location := range strings.Split(input, ", ") {
+		locations = append(locations, parseLocation(location))
+	}
+
+	return locations
+}
+
+func parseLocation(location string) Instruction {
+	parsedLine := strings.SplitN(location, "", 2)
+	if steps, err := strconv.Atoi(parsedLine[1]); err == nil {
+		return Instruction{parsedLine[0], steps}
+	}
+
+	panic("Invalid format")
 }

@@ -76,3 +76,17 @@ func TestSolve(t *testing.T) {
 	}
 
 }
+
+func BenchmarkSolvePart1(b *testing.B) {
+	instructions := parse(input)
+	for i := 0; i < b.N; i++ {
+		solvePart1(instructions)
+	}
+}
+
+func BenchmarkSolvePart2(b *testing.B) {
+	instructions := parse(input)
+	for i := 0; i < b.N; i++ {
+		solvePart2(instructions)
+	}
+}

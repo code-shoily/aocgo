@@ -8,6 +8,10 @@ import (
 //go:embed input.txt
 var input []byte
 
+func main() {
+	fmt.Println(solve())
+}
+
 func solvePart1(input []byte) (floor int) {
 	for _, instruction := range input {
 		if instruction == '(' {
@@ -38,8 +42,4 @@ func solvePart2(input []byte) int {
 
 func solve() (int, int) {
 	return solvePart1(input), solvePart2(input)
-}
-
-func main() {
-	fmt.Println(solve())
 }

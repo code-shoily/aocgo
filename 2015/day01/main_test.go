@@ -7,8 +7,8 @@ import (
 
 func TestSolvePart1(t *testing.T) {
 	var examples = []struct {
-		given []byte
-		got   int
+		given  []byte
+		expect int
 	}{
 		{[]byte{'(', '(', ')', ')'}, 0},
 		{[]byte{'(', ')', '(', ')'}, 0},
@@ -22,12 +22,12 @@ func TestSolvePart1(t *testing.T) {
 	}
 
 	for _, tt := range examples {
-		testname := fmt.Sprintf("Part 1 for %s => %d", tt.given, tt.got)
+		testname := fmt.Sprintf("Part 1 for %s => %d", tt.given, tt.expect)
 		t.Run(testname, func(t *testing.T) {
 			solution := solvePart1(tt.given)
 
-			if solution != tt.got {
-				t.Errorf("Fail - expected %s, got %d", tt.given, tt.got)
+			if solution != tt.expect {
+				t.Errorf("Fail - expected %s, expect %d", tt.given, tt.expect)
 			}
 		})
 	}
@@ -48,7 +48,7 @@ func TestSolvePart2(t *testing.T) {
 			solution := solvePart2(tt.given)
 
 			if solution != tt.got {
-				t.Errorf("Fail - expected %s, got %d", tt.given, tt.got)
+				t.Errorf("Fail - expected %s, expect %d", tt.given, tt.got)
 			}
 		})
 	}
@@ -58,11 +58,11 @@ func TestSolve(t *testing.T) {
 	solve1, solve2 := solve()
 
 	if solve1 != 232 {
-		t.Errorf("Part 1 failed, expected %d, got %d", 232, solve1)
+		t.Errorf("Part 1 failed, expected %d, expect %d", 232, solve1)
 	}
 
 	if solve2 != 1783 {
-		t.Errorf("Part 1 failed, expected %d, got %d", 1783, solve2)
+		t.Errorf("Part 1 failed, expected %d, expect %d", 1783, solve2)
 	}
 }
 
