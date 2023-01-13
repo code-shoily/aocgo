@@ -5,8 +5,8 @@ package day03
 import (
 	_ "embed"
 	"fmt"
+	"github.com/code-shoily/aocgo/algo"
 	"github.com/code-shoily/aocgo/utils"
-	"math"
 )
 
 //go:embed input.txt
@@ -56,7 +56,7 @@ func gammaRate(data [][]int) int {
 		}
 	}
 
-	return toDecimal(bits)
+	return algo.ToDecimal(bits)
 }
 
 func epsilonRate(data [][]int) int {
@@ -107,15 +107,6 @@ func leastFrequentAt(data [][]int, at int) int {
 	return 1
 }
 
-func toDecimal(bits []int) (decimal int) {
-	// FIXME: Move to a separate module
-	size := len(bits)
-	for i := 0; i < len(bits); i++ {
-		decimal += bits[i] * int(math.Pow(2, float64(size-i-1)))
-	}
-	return decimal
-}
-
 type bitFrequencyGetter = func([][]int, int) int
 
 func gasRating(data [][]int, frequencyFn bitFrequencyGetter) int {
@@ -125,7 +116,7 @@ func gasRating(data [][]int, frequencyFn bitFrequencyGetter) int {
 		data = filterByBitAt(data, bit, col)
 
 		if len(data) == 1 {
-			return toDecimal(data[0])
+			return algo.ToDecimal(data[0])
 		}
 
 		col++

@@ -5,6 +5,7 @@ package day03
 import (
 	_ "embed"
 	"fmt"
+	"github.com/code-shoily/aocgo/algo"
 	"github.com/code-shoily/aocgo/utils"
 )
 
@@ -32,10 +33,10 @@ func solvePart1(data [][]int) (triangles int) {
 }
 
 func solvePart2(data [][]int) (triangles int) {
-	transposed := transpose(data)
+	transposed := algo.Transpose(data)
 
 	for _, line := range transposed {
-		for _, triples := range chunkBy(line, 3) {
+		for _, triples := range algo.ChunkBy(line, 3) {
 			if a, b, c := triples[0], triples[1], triples[2]; isTriangle(a, b, c) {
 				triangles++
 			}
@@ -55,37 +56,4 @@ func parse(input string) (data [][]int) {
 
 func isTriangle(a, b, c int) bool {
 	return a+b > c && b+c > a && c+a > b
-}
-
-func transpose(data [][]int) [][]int {
-	// FIXME: Move this into its own module and make it generic
-	transposed := make([][]int, len(data[0]))
-
-	for idx := range transposed {
-		transposed[idx] = make([]int, len(data))
-	}
-
-	for i := 0; i < len(data); i++ {
-		for j := 0; j < len(data[0]); j++ {
-			transposed[j][i] = data[i][j]
-		}
-	}
-
-	return transposed
-}
-
-func chunkBy(seq []int, by int) (chunks [][]int) {
-	// This only takes care of slices with lengths divisible by the chunk size
-	// which satisfies this particular problem, a more general approach should
-	// be taken and this function should be moved out.
-	// FIXME: Tackle all edge cases and move it as a generic function in its own module
-	for i := 0; i < len(seq); i += by {
-		chunk := make([]int, by)
-		for j := 0; j < by; j++ {
-			chunk[j] = seq[i+j]
-		}
-		chunks = append(chunks, chunk)
-	}
-
-	return chunks
 }
