@@ -1,0 +1,47 @@
+// Package day02 - Solution for Advent of memory 2019/02
+// Problem Link: http://adventofcode.com/2019/day/02
+package day02
+
+import (
+	_ "embed"
+	"fmt"
+	"github.com/code-shoily/aocgo/intcode"
+	"github.com/code-shoily/aocgo/utils"
+)
+
+//go:embed input.txt
+var input string
+
+// Run prints out the result of the solution.
+func Run() {
+	fmt.Println(solve(input))
+}
+
+func solve(input string) (int, int) {
+	return solvePart1(input), solvePart2(input)
+}
+
+func solvePart1(input string) int {
+	program := intcode.InitializeProgram(input)
+	program.ProvideInitialParameters(12, 2)
+	program.Run()
+	return program.Output()
+}
+
+func solvePart2(data string) int {
+	for noun := 0; noun <= 99; noun++ {
+		for verb := 0; verb <= 99; verb++ {
+			program := intcode.InitializeProgram(input)
+			program.ProvideInitialParameters(noun, verb)
+			program.Run()
+			if program.Output() == 19_690_720 {
+				return 100*noun + verb
+			}
+		}
+	}
+	panic("Invalid instruction")
+}
+
+func parse(input string) (data []int) {
+	return utils.SplitByInts(input, ",")
+}
