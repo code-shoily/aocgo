@@ -1,4 +1,4 @@
-// Package day02 - Solution for Advent of memory 2019/02
+// Package day02 - Solution for Advent of Code 2019/02
 // Problem Link: http://adventofcode.com/2019/day/02
 package day02
 
