@@ -17,9 +17,7 @@ func Run() {
 
 func solve(input string) (int, int) {
 	expenses := parse(input)
-	sort.Slice(expenses, func(i, j int) bool {
-		return expenses[i] < expenses[j]
-	})
+	sort.Ints(expenses)
 	return solvePart1(expenses), solvePart2(expenses)
 }
 

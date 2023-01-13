@@ -31,9 +31,7 @@ func solve(input string) (int, int) {
 		calories = append(calories, elfCalorie)
 	}
 
-	sort.Slice(calories, func(i, j int) bool {
-		return calories[i] > calories[j]
-	})
+	sort.Sort(sort.Reverse(sort.IntSlice(calories)))
 
 	return calories[0], calories[0] + calories[1] + calories[2]
 }
