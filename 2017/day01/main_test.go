@@ -80,6 +80,20 @@ func TestSolve(t *testing.T) {
 	}
 
 	if solve2 != 1156 {
-		t.Errorf("Fail - part 2. Expected 1156, got %d", solve1)
+		t.Errorf("Fail - part 2. Expected 1156, got %d", solve2)
+	}
+}
+
+func BenchmarkSolvePart1(b *testing.B) {
+	data := parse(input)
+	for i := 0; i < b.N; i++ {
+		solvePart1(data, len(data))
+	}
+}
+
+func BenchmarkSolvePart2(b *testing.B) {
+	data := parse(input)
+	for i := 0; i < b.N; i++ {
+		solvePart2(data, len(data))
 	}
 }
