@@ -30,3 +30,9 @@ func BenchmarkSolvePart2(b *testing.B) {
 		solvePart2(data)
 	}
 }
+
+func BenchmarkSolve(b *testing.B) {
+	for i := 0; i < b.N; i++ {
+		solve(input)
+	}
+}
