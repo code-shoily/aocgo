@@ -30,8 +30,8 @@ func solvePart1(polymer []byte) int {
 func solvePart2(polymer []byte) int {
 	desiredPolymerLength := math.MaxInt
 	for i := 'A'; i <= 'Z'; i++ {
-		samplePolymer := removeUnit(polymer, byte(i))
-		if polymerLength := react(samplePolymer); polymerLength < desiredPolymerLength {
+		testPolymer := without(polymer, byte(i))
+		if polymerLength := react(testPolymer); polymerLength < desiredPolymerLength {
 			desiredPolymerLength = polymerLength
 		}
 	}
@@ -42,15 +42,15 @@ func react(polymer []byte) int {
 	var reacted algo.Stack[byte]
 
 	for len(polymer) > 0 {
-		currentValue := polymer[0]
-		if value, err := reacted.Peek(); !err {
-			if areEqual(value, currentValue) {
+		current := polymer[0]
+		if unit, err := reacted.Peek(); !err {
+			if willReact(unit, current) {
 				reacted.Pop()
 			} else {
-				reacted.Push(currentValue)
+				reacted.Push(current)
 			}
 		} else {
-			reacted.Push(currentValue)
+			reacted.Push(current)
 		}
 		polymer = polymer[1:]
 	}
@@ -58,22 +58,20 @@ func react(polymer []byte) int {
 	return len(reacted)
 }
 
-func removeUnit(polymer []byte, a byte) []byte {
+func without(polymer []byte, unit byte) []byte {
 	newPolymer := make([]byte, 0, len(polymer))
 	for i := 0; i < len(polymer); i++ {
-		unit := polymer[i]
-		if unit == a || unit == a+casingOffset {
-			continue
+		if current := polymer[i]; current != unit && current != unit+casingOffset {
+			newPolymer = append(newPolymer, current)
 		}
-		newPolymer = append(newPolymer, unit)
 	}
 
 	return newPolymer
 }
 
-func areEqual(value byte, currentValue byte) bool {
-	if value > currentValue {
-		return value-currentValue == casingOffset
+func willReact(unit1 byte, unit2 byte) bool {
+	if unit1 > unit2 {
+		return unit1-unit2 == casingOffset
 	}
-	return currentValue-value == casingOffset
+	return unit2-unit1 == casingOffset
 }
