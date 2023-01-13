@@ -30,7 +30,7 @@ func solve(input string) (int, int) {
 }
 
 func solvePart1(guards map[int]Guard) int {
-	maxSleepTime := math.MinInt
+	var maxSleepTime int
 	var superSleeper Guard
 
 	for _, guard := range guards {
@@ -41,7 +41,7 @@ func solvePart1(guards map[int]Guard) int {
 	}
 
 	minuteAsleepMost, _ := superSleeper.minuteAsleepMost()
-	return minuteAsleepMost * superSleeper.id
+	return minuteAsleepMost * superSleeper.ID
 }
 
 func solvePart2(guards map[int]Guard) int {
@@ -60,30 +60,29 @@ func solvePart2(guards map[int]Guard) int {
 		}
 	}
 
-	return minuteAsleepMost * habitualSleeper.id
+	return minuteAsleepMost * habitualSleeper.ID
 }
 
 func parse(input string) map[int]Guard {
 	events := parseEvents(input)
 
 	guards := map[int]Guard{}
-	var currentGuard, sleep int
+	var previousGuardID, sleptAt int
 
 	for _, event := range events {
 		switch event.eventType {
 		case asleep:
-			sleep = event.minute
+			sleptAt = event.minute
 		case awake:
-			guard := guards[currentGuard]
-			guard.sleep(sleep, event.minute)
-			sleep = 0
+			guard := guards[previousGuardID]
+			guard.sleep(sleptAt, event.minute)
 		default:
-			guardId := event.eventType
-			if _, ok := guards[guardId]; ok {
-				currentGuard = guardId
+			currentGuardID := event.eventType
+			if _, ok := guards[currentGuardID]; ok {
+				previousGuardID = currentGuardID
 			} else {
-				guards[guardId] = Guard{id: guardId, minutesAsleep: make([]int, 60)}
-				currentGuard = guardId
+				guards[currentGuardID] = Guard{ID: currentGuardID, minutesAsleep: make([]int, 60)}
+				previousGuardID = currentGuardID
 			}
 		}
 	}
@@ -114,16 +113,15 @@ func parseEvent(eventLine string) Event {
 	}
 }
 
-func parseEventType(rawEventType string) int {
+func parseEventType(rawEventType string) (eventType int) {
 	switch rawEventType {
 	case "wakes up":
 		return awake
 	case "falls asleep":
 		return asleep
 	default:
-		var guard int
-		fmt.Sscanf(rawEventType, "Guard #%d begins shift", &guard)
-		return guard
+		fmt.Sscanf(rawEventType, "Guard #%d begins shift", &eventType)
+		return eventType
 	}
 }
 
@@ -137,9 +135,10 @@ func stripBrackets(line string) string {
 
 func extractMinute(timeStr string) int {
 	timeValues := strings.Split(timeStr, ":")
-	minute, _ := strconv.Atoi(timeValues[1])
-
-	return minute
+	if minute, err := strconv.Atoi(timeValues[1]); err == nil {
+		return minute
+	}
+	panic("Invalid input")
 }
 
 type Event struct {
@@ -149,7 +148,7 @@ type Event struct {
 }
 
 type Guard struct {
-	id            int
+	ID            int
 	minutesAsleep []int
 }
 
@@ -159,19 +158,18 @@ func (guard *Guard) sleep(from, to int) {
 	}
 }
 
-func (guard *Guard) totalSleepTime() (total int) {
+func (guard *Guard) totalSleepTime() (sleepTime int) {
 	for _, freq := range guard.minutesAsleep {
-		total += freq
+		sleepTime += freq
 	}
 
-	return total
+	return sleepTime
 }
 
 func (guard *Guard) minuteAsleepMost() (sleepyMinute int, minutesAsleep int) {
 	for minute, tally := range guard.minutesAsleep {
 		if tally > minutesAsleep {
-			sleepyMinute = minute
-			minutesAsleep = tally
+			sleepyMinute, minutesAsleep = minute, tally
 		}
 	}
 
