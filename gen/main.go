@@ -8,10 +8,10 @@ import (
 	"text/template"
 )
 
-//go:embed code.tpl
+//go:embed code.txt
 var code string
 
-//go:embed test.tpl
+//go:embed test.txt
 var test string
 
 func writeFromTemplate(target io.Writer, name string, content string, year int, day int) {
