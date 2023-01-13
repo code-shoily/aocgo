@@ -11,12 +11,15 @@ import (
 //go:embed input.txt
 var input string
 
-type ContainerMap = map[int][]string
-type MoveInstruction struct {
+type ContainerState = map[int][]string
+type Move struct {
 	quantity int
 	from     int
 	to       int
 }
+
+var empty = "   "
+var emptyMarker = "_"
 
 // Run prints out the result of the solution.
 func Run() {
@@ -31,16 +34,13 @@ func solvePart1(input string) string {
 	state, moves := parse(input)
 
 	for _, movement := range moves {
-		toMove := make([]string, movement.quantity)
+		containers := make([]string, movement.quantity)
 		for idx, container := range state[movement.from][:movement.quantity] {
-			toMove[movement.quantity-idx-1] = container
+			containers[movement.quantity-idx-1] = container
 		}
 
 		state[movement.from] = state[movement.from][movement.quantity:]
-
-		for i := len(toMove) - 1; i >= 0; i-- {
-			state[movement.to] = append([]string{toMove[i]}, state[movement.to]...)
-		}
+		state[movement.to] = append(containers, state[movement.to]...)
 	}
 
 	return topContainers(state)
@@ -50,53 +50,53 @@ func solvePart2(input string) string {
 	state, moves := parse(input)
 
 	for _, movement := range moves {
-		toMove := make([]string, movement.quantity)
-		copy(toMove, state[movement.from][:movement.quantity])
+		containers := make([]string, movement.quantity)
+		copy(containers, state[movement.from][:movement.quantity])
 		state[movement.from] = state[movement.from][movement.quantity:]
-		state[movement.to] = append(toMove, state[movement.to]...)
+		state[movement.to] = append(containers, state[movement.to]...)
 	}
 
 	return topContainers(state)
 }
 
-func parse(input string) (ContainerMap, []MoveInstruction) {
+func parse(input string) (ContainerState, []Move) {
 	sections := strings.Split(input, "\n\n")
-	return parseContainerState(sections[0]), parseMovements(sections[1])
+	return parseContainerState(sections[0]), parseMoves(sections[1])
 }
 
 func getContainerId(token string) string {
 	return token[1:2]
 }
 
-func parseContainerState(input string) ContainerMap {
+func parseContainerState(input string) ContainerState {
 	lines := strings.Split(input, "\n")
 	width := len(lines[0])
 	containerGrid := make([][]string, 0, len(lines))
 
 	for _, line := range lines[:len(lines)-1] {
-		var row []string
+		var level []string
 
 		for i := 0; i < width; i += 4 {
-			if container := line[i : i+3]; container != "   " {
-				row = append(row, getContainerId(container))
+			if container := line[i : i+3]; container != empty {
+				level = append(level, getContainerId(container))
 			} else {
-				row = append(row, "_")
+				level = append(level, emptyMarker)
 			}
 		}
 
-		containerGrid = append(containerGrid, row)
+		containerGrid = append(containerGrid, level)
 	}
 
-	return toContainerMap(containerGrid)
+	return asContainerState(containerGrid)
 }
 
-func toContainerMap(grid [][]string) ContainerMap {
-	containerState := make(ContainerMap)
+func asContainerState(grid [][]string) ContainerState {
+	containerState := make(ContainerState)
 
 	for _, column := range grid {
 		idx := 1
 		for _, container := range column {
-			if container != "_" {
+			if container != emptyMarker {
 				containerState[idx] = append(containerState[idx], container)
 			}
 			idx++
@@ -106,22 +106,22 @@ func toContainerMap(grid [][]string) ContainerMap {
 	return containerState
 }
 
-func parseMovements(input string) []MoveInstruction {
+func parseMoves(input string) []Move {
 	lines := strings.Split(input, "\n")
-	movements := make([]MoveInstruction, 0, len(lines))
+	moves := make([]Move, 0, len(lines))
 
 	for _, line := range lines {
 		var quantity, from, to int
 		fmt.Sscanf(line, "move %d from %d to %d", &quantity, &from, &to)
-		movements = append(movements, MoveInstruction{quantity, from, to})
+		moves = append(moves, Move{quantity, from, to})
 	}
 
-	return movements
+	return moves
 }
 
-func topContainers(stack ContainerMap) string {
-	output := make([]string, len(stack))
-	for k, v := range stack {
+func topContainers(state ContainerState) string {
+	output := make([]string, len(state))
+	for k, v := range state {
 		output[k-1] = v[0]
 	}
 
