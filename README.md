@@ -7,8 +7,10 @@
 More about Advent of Code here: [https://adventofcode.com/2022/about](https://adventofcode.com/2022/about).
 
 ## How do I run these?
+* To create stubs for solving for instance, 2022/1, run: `go run main.go gen 2022 1`
+* To run solution for the same, run: `go run main.go solve 2022 1`
 
-I have not done any `make-fu` yet. So as of today, the way to run this is just `cd` into the `year` and `dayXX` and `go test` and `go run main.go`. I will automate things later.
+Note, empty `input.txt` is create after `gen` command for now. You will need to copy/paste the input data to the file.
 
 | Day | [2015](2015/) | [2016](2016/) | [2017](2017/) | [2018](year18/) | [2019](2019/) | [2020](year20/) | [2021](2021/) | [2022](2022/) |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|

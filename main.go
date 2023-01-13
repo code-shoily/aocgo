@@ -3,6 +3,7 @@ package main
 import (
 	"errors"
 	"fmt"
+	"github.com/code-shoily/aocgo/gen"
 	"github.com/code-shoily/aocgo/year15"
 	"github.com/code-shoily/aocgo/year16"
 	"github.com/code-shoily/aocgo/year17"
@@ -48,30 +49,34 @@ func solve(year, day int) {
 	}
 }
 
-func extractFromArgs(args []string) (year int, day int) {
-	if yearInt, error := strconv.Atoi(args[0]); error == nil {
+func extractFromArgs(args []string) (cmd string, year int, day int) {
+	if yearInt, error := strconv.Atoi(args[1]); error == nil {
 		year = yearInt
 	}
 
-	if dayInt, error := strconv.Atoi(args[1]); error == nil {
+	if dayInt, error := strconv.Atoi(args[2]); error == nil {
 		day = dayInt
 	}
 
-	return year, day
+	return args[0], year, day
 }
 
 func main() {
 	args := os.Args
+	cmd, year, day := "gen", 2018, 4
 
-	year, day := 2018, 2
-
-	if len(args) == 3 {
-		year, day = extractFromArgs(args[1:])
+	if len(args) == 4 {
+		cmd, year, day = extractFromArgs(args[1:])
 	}
 
 	if error := validate(year, day); error != nil {
 		fmt.Println(error.Error())
 	} else {
-		solve(year, day)
+		switch cmd {
+		case "gen":
+			gen.GenerateSources(year, day)
+		case "solve":
+			solve(year, day)
+		}
 	}
 }
