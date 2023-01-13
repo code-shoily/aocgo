@@ -19,7 +19,7 @@ Note, empty `input.txt` is create after `gen` command for now. You will need to 
 |1| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal:| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |3| :1st_place_medal: |  | | | | | :1st_place_medal: | :1st_place_medal: |
-|4| | | | | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: |
+|4| :1st_place_medal: | | | | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: |
 |5| :1st_place_medal: | :1st_place_medal: | | | | | | :1st_place_medal: |
 |6| :1st_place_medal: | :1st_place_medal: | | | | | | |
 |7| | | | | | | | |
