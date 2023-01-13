@@ -17,8 +17,8 @@ func Run() {
 }
 
 func solve(input string) (int, int) {
-	data := parse(input)
-	return solvePart1(data), solvePart2(data)
+	rucksacks := parse(input)
+	return solvePart1(rucksacks), solvePart2(rucksacks)
 }
 
 func solvePart1(rucksacks []string) (total int) {
