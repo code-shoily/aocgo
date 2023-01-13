@@ -108,6 +108,7 @@ func leastFrequentAt(data [][]int, at int) int {
 }
 
 func toDecimal(bits []int) (decimal int) {
+	// FIXME: Move to a separate module
 	size := len(bits)
 	for i := 0; i < len(bits); i++ {
 		decimal += bits[i] * int(math.Pow(2, float64(size-i-1)))
@@ -129,6 +130,4 @@ func gasRating(data [][]int, frequencyFn bitFrequencyGetter) int {
 
 		col++
 	}
-
-	panic("Shouldn't be here")
 }
