@@ -11,12 +11,14 @@ import (
 	"github.com/code-shoily/aocgo/year20"
 	"github.com/code-shoily/aocgo/year21"
 	"github.com/code-shoily/aocgo/year22"
+	"os"
+	"strconv"
 )
 
-const CurrentYear = 2022
+const currentYear = 2022
 
 func validate(year, day int) error {
-	if year < 2015 || year > CurrentYear {
+	if year < 2015 || year > currentYear {
 		return errors.New("invalid year entered")
 	}
 	if day < 1 || day > 25 {
@@ -46,11 +48,30 @@ func solve(year, day int) {
 	}
 }
 
+func extractFromArgs(args []string) (year int, day int) {
+	if yearInt, error := strconv.Atoi(args[0]); error == nil {
+		year = yearInt
+	}
+
+	if dayInt, error := strconv.Atoi(args[1]); error == nil {
+		day = dayInt
+	}
+
+	return year, day
+}
+
 func main() {
-	year, day := 2015, 14
+	args := os.Args
+
+	year, day := 2018, 2
+
+	if len(args) == 3 {
+		year, day = extractFromArgs(args[1:])
+	}
+
 	if error := validate(year, day); error != nil {
 		fmt.Println(error.Error())
-		return
+	} else {
+		solve(year, day)
 	}
-	solve(year, day)
 }

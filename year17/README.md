@@ -2,6 +2,7 @@
 
 [Main Page](https://adventofcode.com/2017)
 
-| Day |                         Problem Page                          | Difficulty |               Solution Page               | Felt like | Blog |
-| :---: |:-------------------------------------------------------------:| ---: |:-----------------------------------------:|:---------:| :---: |
+| Day |                         Problem Page                          | Difficulty |       Solution Page       | Felt like | Blog |
+| :---: |:-------------------------------------------------------------:| ---: |:-------------------------:|:---------:| :---: |
 | 1 | [Day 1: Inverse Captcha](https://adventofcode.com/2017/day/1) | :star2: | [2017/day01](/2017/day01) |  :cake:   | N/A |
+|  2  |   [Corruption Checksum](https://adventofcode.com/2017/day/2)    | :star2: | [2017/day02](/2017/day02) |  :cake:   | N/A |

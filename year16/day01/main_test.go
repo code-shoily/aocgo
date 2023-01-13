@@ -66,13 +66,14 @@ func TestSolvePart2(t *testing.T) {
 
 func TestSolve(t *testing.T) {
 	solve1, solve2 := solve(input)
+	expect1, expect2 := 253, 126
 
-	if solve1 != 253 {
-		t.Errorf("Fail - part 1 is failing, got %d, expected 253", solve1)
+	if solve1 != expect1 {
+		t.Errorf("Fail - part 1 is failing, got %d, expected %d", solve1, expect1)
 	}
 
-	if solve2 != 126 {
-		t.Errorf("Fail - part 2 is failing, got %d, expected 126", solve1)
+	if solve2 != expect2 {
+		t.Errorf("Fail - part 2 is failing, got %d, expected %d", solve2, expect2)
 	}
 
 }
