@@ -12,12 +12,12 @@ More about Advent of Code here: [https://adventofcode.com/2022/about](https://ad
 
 Note, empty `input.txt` is create after `gen` command for now. You will need to copy/paste the input data to the file.
 
-## Current Status (14/200)
+## Current Status (16/200)
 
 | Day | [2015](year15/) | [2016](year16/) | [2017](year17/) | [2018](year18/) | [2019](year19/) | [2020](year20/) | [2021](year21/) | [2022](year22/) |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |1| :1st_place_medal: | :1st_place_medal: |:1st_place_medal: |:1st_place_medal: | :1st_place_medal:|:1st_place_medal: |:1st_place_medal: |:1st_place_medal: |
-|2| :1st_place_medal: |:1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |:1st_place_medal: |:1st_place_medal: | |
+|2| :1st_place_medal: |:1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |:1st_place_medal: |:1st_place_medal: | :1st_place_medal: |
 |3| | | | | | | | |
 |4| | | | | | | | |
 |5| | | | | | | | |

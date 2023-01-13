@@ -63,7 +63,7 @@ func extractFromArgs(args []string) (cmd string, year int, day int) {
 
 func main() {
 	args := os.Args
-	cmd, year, day := "gen", 2018, 4
+	cmd, year, day := "solve", 2022, 2
 
 	if len(args) == 4 {
 		cmd, year, day = extractFromArgs(args[1:])
