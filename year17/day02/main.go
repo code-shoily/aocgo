@@ -3,7 +3,7 @@ package day02
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/algo"
+	"github.com/code-shoily/aocgo/seq"
 	"github.com/code-shoily/aocgo/utils"
 )
 
@@ -31,7 +31,7 @@ func parse(input string) (data [][]int) {
 
 func solvePart1(data [][]int) (result int) {
 	for _, row := range data {
-		min, max := algo.GetMinMax(row)
+		min, max := seq.GetMinMax(row)
 		result += max - min
 	}
 

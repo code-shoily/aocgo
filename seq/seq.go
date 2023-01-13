@@ -1,4 +1,4 @@
-package algo
+package seq
 
 import "golang.org/x/exp/constraints"
 

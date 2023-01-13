@@ -5,7 +5,7 @@ package day06
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/algo"
+	"github.com/code-shoily/aocgo/seq"
 	"github.com/code-shoily/aocgo/utils"
 	"math"
 	"strings"
@@ -21,12 +21,12 @@ func Run() {
 
 func solve(input string) (string, string) {
 	data := parse(input)
-	tr := algo.Transpose(data)
+	tr := seq.Transpose(data)
 	slice1 := make([]string, len(tr))
 	slice2 := make([]string, len(tr))
 
 	for idx, column := range tr {
-		frequencies := algo.Frequencies(column)
+		frequencies := seq.Frequencies(column)
 		min, max := minMaxFrequencies(frequencies)
 		slice1[idx] = max
 		slice2[idx] = min

@@ -20,7 +20,7 @@ func TestIntToDigits(t *testing.T) {
 		if got := IntToDigits(example.given); !reflect.DeepEqual(got, example.expect) {
 			name := fmt.Sprintf("testing for input %v", example.given)
 			t.Run(name, func(tt *testing.T) {
-				tt.Errorf("Faile - expected %v but got %v", example.expect, got)
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
 			})
 		}
 	}

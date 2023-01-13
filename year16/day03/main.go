@@ -5,7 +5,7 @@ package day03
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/algo"
+	"github.com/code-shoily/aocgo/seq"
 	"github.com/code-shoily/aocgo/utils"
 )
 
@@ -33,10 +33,10 @@ func solvePart1(data [][]int) (triangles int) {
 }
 
 func solvePart2(data [][]int) (triangles int) {
-	transposed := algo.Transpose(data)
+	transposed := seq.Transpose(data)
 
 	for _, line := range transposed {
-		for _, triples := range algo.ChunkBy(line, 3) {
+		for _, triples := range seq.ChunkBy(line, 3) {
 			if a, b, c := triples[0], triples[1], triples[2]; isTriangle(a, b, c) {
 				triangles++
 			}
