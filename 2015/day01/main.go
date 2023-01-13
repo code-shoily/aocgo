@@ -8,8 +8,7 @@ import (
 //go:embed input.txt
 var input []byte
 
-func solvePart1(input []byte) int {
-	floor := 0
+func solvePart1(input []byte) (floor int) {
 	for _, instruction := range input {
 		if instruction == '(' {
 			floor += 1
@@ -34,7 +33,7 @@ func solvePart2(input []byte) int {
 		}
 	}
 
-	return -1
+	panic("Will never reach basement.")
 }
 
 func solve() (int, int) {
