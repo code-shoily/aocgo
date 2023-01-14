@@ -10,3 +10,4 @@
 |  2 | [Password Philosophy](https://adventofcode.com/2020/day/2) | :star2: | [year20/day02](/year20/day02) | :lock: |
 |  3 | [Toboggan Trajectory](https://adventofcode.com/2020/day/3) | :seedling: | [year20/day03](/year20/day03) | :evergreen_tree: :snowboarder: :arrow_right: :arrow_down: |
 |  4  | [Passport Processing](https://adventofcode.com/2020/day/4) | :tired_face: | [year20/day04](/year20/day04) | :passport_control: |
+|  5  | [Binary Boarding](https://adventofcode.com/2020/day/5) | :exploding_head: | [year20/day05](/year20/day05) | :airplane: :ticket: :zero: :one: |
