@@ -2,6 +2,8 @@
 
 [Advent of Code Page](https://adventofcode.com/2021)
 
+[2015](/year15) | [2016](/year16) | [2017](/year17) | [2018](/year18) | [2019](/year19) | [2020](/year20) | [2021](/year21) | [2017](/year22)
+
 | Day |                    Problem Page                    | Difficulty |       Solution Page       |      :wink:      |
 |:--:|:--------------------------------------------------:| ---: |:-------------------------:|:----------------:|
 |  1 | [Sonar Sweep](https://adventofcode.com/2021/day/1) | :star2: | [year21/day01](/year21/day01) |     :pager:      |

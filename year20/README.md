@@ -2,6 +2,8 @@
 
 [Advent of Code Page](https://adventofcode.com/2020)
 
+[2015](/year15) | [2016](/year16) | [2017](/year17) | [2018](/year18) | [2019](/year19) | [2020](/year20) | [2021](/year21) | [2017](/year22)
+
 | Day |                        Problem Page                        | Difficulty |        Solution Page        |                    :wink:                     |
 |:--:|:----------------------------------------------------------:| ---: |:---------------------------:|:---------------------------------------------:|
 |  1 |    [Report Repair](https://adventofcode.com/2020/day/1)    | :star2: | [year20/day01](/year20/day01) | :heavy_dollar_sign: :two: :zero: :two: :zero: |
