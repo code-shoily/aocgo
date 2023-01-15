@@ -12,7 +12,7 @@ More about Advent of Code here: [https://adventofcode.com/2022/about](https://ad
 
 Note, empty `input.txt` is create after `gen` command for now. You will need to copy/paste the input data to the file.
 
-## Progress - 39 of 200
+## Progress - 40 of 200
 
 | Day | [2015](year15/) | [2016](year16/) | [2017](year17/) | [2018](year18/) | [2019](year19/) | [2020](year20/) | [2021](year21/) | [2022](year22/) |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
@@ -21,7 +21,7 @@ Note, empty `input.txt` is create after `gen` command for now. You will need to 
 |3| :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |4| :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: |
 |5| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-|6| :1st_place_medal: | :1st_place_medal: | | | | :1st_place_medal: | | :1st_place_medal: |
+|6| :1st_place_medal: | :1st_place_medal: | | | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |7| | | | | | | | |
 |8| | | | | | | | |
 |9| | | | | | | | |
