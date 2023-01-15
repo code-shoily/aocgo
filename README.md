@@ -14,7 +14,15 @@ Note: The additional commands (i.e. `run`, `g` etc) are there because when I am 
 
 Note, empty `input.txt` is create after `gen` (or `g`) command for now. You will need to copy/paste the input data to the file.
 
-**Note:** I am using `embed` and `generics` to solve problems. So at least go `1.18` is needed to run these.
+## FAQ
+
+**What version of Go do I need to use for these?**
+
+I am using `embed` and `generics` to solve problems. So at least go `1.18` is needed to run these. 
+
+**Where are the input files?**
+
+I have not shared my inputs as it is [discouraged to share inputs](https://www.reddit.com/r/adventofcode/comments/k99rod/sharing_input_data_were_we_requested_not_to/) on public repository and I respect that. I will purge my past shares soon as I didn't know of info. 
 
 ## Progress - 40 of 200
 
