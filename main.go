@@ -63,19 +63,26 @@ func extractFromArgs(args []string) (cmd string, year int, day int) {
 
 func main() {
 	args := os.Args
-	cmd, year, day := "solve", 2022, 2
+	var (
+		cmd       string
+		year, day int
+	)
 
 	if len(args) == 4 {
 		cmd, year, day = extractFromArgs(args[1:])
+	} else {
+		fmt.Println("[Usage] <cmd> <year> <day>")
+		os.Exit(1)
 	}
 
 	if error := validate(year, day); error != nil {
 		fmt.Println(error.Error())
+		os.Exit(1)
 	} else {
 		switch cmd {
-		case "gen":
+		case "gen", "g":
 			gen.GenerateSources(year, day)
-		case "solve":
+		case "solve", "run", "s", "r":
 			solve(year, day)
 		}
 	}

@@ -7,14 +7,18 @@
 More about Advent of Code here: [https://adventofcode.com/2022/about](https://adventofcode.com/2022/about).
 
 ## How do I run these?
-* To create stubs for solving for instance, 2022/1, run: `go run main.go gen 2022 1`
-* To run solution for the same, run: `go run main.go solve 2022 1`
+* To create stubs for solving for instance, 2022/1, run: `go run main.go gen 2022 1` (also `g` instead of `gen`)
+* To run solution for the same, run: `go run main.go solve 2022 1` (also `run`, `r` or `s` instead of `solve`)
 
-Note, empty `input.txt` is create after `gen` command for now. You will need to copy/paste the input data to the file.
+Note: The additional commands (i.e. `run`, `g` etc) are there because when I am rapidly testing solutions, I have often typed those and failed. So totally for my convenience that one.
+
+Note, empty `input.txt` is create after `gen` (or `g`) command for now. You will need to copy/paste the input data to the file.
+
+**Note:** I am using `embed` and `generics` to solve problems. So at least go `1.18` is needed to run these.
 
 ## Progress - 40 of 200
 
-| Day | [2015](year15/) | [2016](year16/) | [2017](year17/) | [2018](year18/) | [2019](year19/) | [2020](year20/) | [2021](year21/) | [2022](year22/) |
+| Day | [2015](year15) | [2016](year16) | [2017](year17) | [2018](year18) | [2019](year19) | [2020](year20) | [2021](year21) | [2022](year22) |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
 |1| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal:| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
