@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/code-shoily/aocgo/year19/day01"
 	"github.com/code-shoily/aocgo/year19/day02"
+	"github.com/code-shoily/aocgo/year19/day03"
 	"github.com/code-shoily/aocgo/year19/day04"
 )
 
@@ -13,6 +14,8 @@ func SolveForDay(day int) {
 		day01.Run()
 	case 2:
 		day02.Run()
+	case 3:
+		day03.Run()
 	case 4:
 		day04.Run()
 	default:
