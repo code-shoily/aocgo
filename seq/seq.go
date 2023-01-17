@@ -59,3 +59,14 @@ func Transpose[T any](data [][]T) [][]T {
 
 	return transposed
 }
+
+// MakeSet turns a slice into set emulating map
+func MakeSet[T comparable](seq []T) map[T]bool {
+	set := make(map[T]bool)
+
+	for _, elem := range seq {
+		set[elem] = true
+	}
+
+	return set
+}

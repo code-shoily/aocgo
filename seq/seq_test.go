@@ -92,3 +92,25 @@ func TestTranspose(t *testing.T) {
 		})
 	}
 }
+
+func TestMakeSet(t *testing.T) {
+	examples := []struct {
+		given  []string
+		expect map[string]bool
+	}{
+		{[]string{}, map[string]bool{}},
+		{[]string{"a"}, map[string]bool{"a": true}},
+		{[]string{"a", "b"}, map[string]bool{"a": true, "b": true}},
+		{[]string{"a", "a", "b"}, map[string]bool{"a": true, "b": true}},
+		{[]string{"a", "a", "a"}, map[string]bool{"a": true}},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example.given)
+		t.Run(name, func(tt *testing.T) {
+			if got := MakeSet[string](example.given); !reflect.DeepEqual(example.expect, got) {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
