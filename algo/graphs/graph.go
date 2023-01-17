@@ -18,6 +18,10 @@ type Graph[T comparable] struct {
 	graphSettings
 }
 
+func (g *Graph[T]) Vertices() map[string]*vertex[T] {
+	return g.vertices
+}
+
 // AddVertex adds a single vertex to the graph
 func (g *Graph[T]) AddVertex(v *vertex[T]) error {
 	if g.HasVertex(v.id) {

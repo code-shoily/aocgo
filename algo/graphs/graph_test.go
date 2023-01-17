@@ -1,5 +1,7 @@
 package graphs
 
+//FIXME: Decompose those large ass test funcs.
+
 import (
 	"fmt"
 	"testing"
@@ -103,4 +105,109 @@ func TestGraph_AddEdgeDirected(t *testing.T) {
 				pair[0], pair[1], 42, err)
 		}
 	}
+
+	edges := getGraphEdges(g)
+
+	if count := edgeCount(edges); count != len(vertexIDPairs) {
+		t.Errorf("Fail - edge len is expected to be %v but found %v",
+			count,
+			len(vertexIDPairs))
+	}
+
+	edgeVertices := vertexIDPairs
+
+	for _, pair := range edgeVertices {
+		if w := edges[pair[0]][pair[1]]; w != 42 {
+			t.Errorf("Fail - edge %v %v -> %v not found",
+				pair[0],
+				pair[1],
+				42)
+		}
+	}
+
+}
+
+func TestGraph_AddEdgeUndirected(t *testing.T) {
+	g := NewGraph[string](false)
+
+	vertices := []*vertex[string]{
+		NewSimpleVertex("a"),
+		NewSimpleVertex("b"),
+		NewSimpleVertex("c"),
+		NewSimpleVertex("d"),
+	}
+
+	// Add vertices
+	for _, v := range vertices {
+		if err := g.AddVertex(v); err != nil {
+			t.Errorf("Fail - could not add vertex, received error %v", err)
+		}
+	}
+
+	// Add edges
+	// Poor graphical representation:
+	// a --- b --- c
+	// |    /
+	// d __|
+	vertexIDPairs := [][2]string{
+		{"a", "b"},
+		{"a", "d"},
+		{"b", "c"},
+		{"d", "b"},
+	}
+
+	for _, pair := range vertexIDPairs {
+		if err := g.AddEdge(pair[0], pair[1], 42); err != nil {
+			t.Errorf("Fail - could not add %v -> %v (%v). Got error %v",
+				pair[0], pair[1], 42, err)
+		}
+	}
+
+	edges := getGraphEdges(g)
+
+	if count := edgeCount(edges); count != 2*len(vertexIDPairs) {
+		t.Errorf("Fail - edge len is expected to be %v but found %v",
+			count,
+			2*len(vertexIDPairs))
+	}
+
+	edgeVertices := [][2]string{
+		{"a", "b"},
+		{"b", "a"},
+		{"a", "d"},
+		{"d", "a"},
+		{"b", "c"},
+		{"c", "b"},
+		{"d", "b"},
+		{"b", "d"},
+	}
+
+	for _, pair := range edgeVertices {
+		if w := edges[pair[0]][pair[1]]; w != 42 {
+			t.Errorf("Fail - edge %v %v -> %v not found",
+				pair[0],
+				pair[1],
+				42)
+		}
+	}
+}
+
+func getGraphEdges[T comparable](g *Graph[T]) map[string]map[string]int {
+	edges := map[string]map[string]int{}
+	for _, v := range g.vertices {
+		edges[v.id] = map[string]int{}
+		for w, weight := range v.outgoing {
+			edges[v.id][w.id] = weight
+		}
+	}
+
+	return edges
+}
+
+func edgeCount(edges map[string]map[string]int) (count int) {
+	for _, m := range edges {
+		count += len(m)
+	}
+
+	return count
 }
