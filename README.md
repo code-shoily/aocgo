@@ -31,7 +31,7 @@ I have not shared my inputs as it is [discouraged to share inputs](https://www.r
 |1| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal:| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |3| :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-|4| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: |
+|4| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |5| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |6| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |7| | | | | | | | |
