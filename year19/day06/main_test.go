@@ -6,7 +6,7 @@ import (
 
 func TestSolve(t *testing.T) {
 	solve1, solve2 := solve(input)
-	expected1, expected2 := 147807, 229
+	expected1, expected2 := 147_807, 229
 
 	if solve1 != expected1 {
 		t.Errorf("Fail - part 1. Expected %d, got %d", expected1, solve1)
