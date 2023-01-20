@@ -8,17 +8,18 @@ import (
 
 func TestProgram_InitializeProgram(t *testing.T) {
 	examples := []struct {
-		given  string
-		expect []int
+		inputFeed     string
+		startingValue int
+		expect        []int
 	}{
-		{"1,2,3", []int{1, 2, 3}},
-		{"1", []int{1}},
+		{"1,2,3", 1, []int{1, 2, 3}},
+		{"1", 2, []int{1}},
 	}
 
 	for _, example := range examples {
-		name := fmt.Sprintf("testing for input %v", example.given)
+		name := fmt.Sprintf("testing for input %v", example.inputFeed)
 		t.Run(name, func(tt *testing.T) {
-			if program := InitializeProgram(example.given); !reflect.DeepEqual(program.memory, example.expect) {
+			if program := InitializeProgram(example.inputFeed, example.startingValue); !reflect.DeepEqual(program.memory, example.expect) || program.startValue != example.startingValue {
 				tt.Errorf("Fail - expected %v but got %v", example.expect, program.memory)
 			}
 		})
@@ -36,7 +37,7 @@ func TestProgram_Step(t *testing.T) {
 	}
 
 	for _, example := range examples {
-		program := InitializeProgram(example.given)
+		program := InitializeProgram(example.given, 0)
 		name := fmt.Sprintf("testing for input %v", example.given)
 		t.Run(name, func(tt *testing.T) {
 			program.Step()
@@ -60,7 +61,7 @@ func TestProgram_Run(t *testing.T) {
 	}
 
 	for _, example := range examples {
-		program := InitializeProgram(example.given)
+		program := InitializeProgram(example.given, 0)
 		name := fmt.Sprintf("testing for input %v", example.given)
 		t.Run(name, func(tt *testing.T) {
 			program.Run()
@@ -84,7 +85,7 @@ func TestProgram_ProvideInitialParameters(t *testing.T) {
 	}
 
 	for _, example := range examples {
-		program := InitializeProgram(example.given)
+		program := InitializeProgram(example.given, 0)
 		name := fmt.Sprintf("testing for input %v", example.given)
 		t.Run(name, func(tt *testing.T) {
 			program.ProvideInitialParameters(example.noun, example.verb)
@@ -108,11 +109,47 @@ func TestProgram_Output(t *testing.T) {
 	}
 
 	for _, example := range examples {
-		program := InitializeProgram(example.given)
+		program := InitializeProgram(example.given, 0)
 		name := fmt.Sprintf("testing for input %v", example.given)
 		t.Run(name, func(tt *testing.T) {
 			if got := program.Output(); example.expect != got {
 				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
+
+func TestParseParameterMode(t *testing.T) {
+	type Example struct {
+		instruction int
+		opCode      int
+		imMode1     bool
+		imMode2     bool
+	}
+
+	examples := []Example{
+		{1, 1, false, false},
+		{2, 2, false, false},
+		{101, 1, true, false},
+		{1002, 2, false, true},
+		{1101, 1, true, true},
+	}
+
+	assertAll := func(example Example, opCode int, pMode1 bool, pMode2 bool) bool {
+		return opCode == example.opCode && pMode1 == example.imMode1 && pMode2 == example.imMode2
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example.instruction)
+		t.Run(name, func(tt *testing.T) {
+			if opCode, pMode1, pMode2 := parseParameterMode(example.instruction); !assertAll(example, opCode, pMode1, pMode2) {
+				tt.Errorf("Fail - expected %v/%v/%v but got %v/%v/%v",
+					example.opCode,
+					example.imMode1,
+					example.imMode2,
+					opCode,
+					pMode1,
+					pMode2)
 			}
 		})
 	}
