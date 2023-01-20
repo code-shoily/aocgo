@@ -39,8 +39,6 @@ func solve(input string) (int, int) {
 
 		visits[data] = step
 	}
-
-	panic("Error processing.")
 }
 
 func parse(input string) (data [size]int) {
