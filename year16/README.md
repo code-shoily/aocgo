@@ -12,3 +12,4 @@
 |  4  |   [Security Through Obscurity](https://adventofcode.com/2016/day/4)   | :star2: :star2: | [year16/day04](/year16/day04) | :ice_cube: :office: | 
 |  5  |   [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5)   | :hourglass: | [year16/day05](/year16/day05) |         :hash: :chess_pawn:          | 
 |  6  |   [Signals and Noise](https://adventofcode.com/2016/day/6)   | :star2: | [year16/day06](/year16/day06) | :control_knobs: :musical_score: | 
+|  7  |   [Internet Protocol Version 7](https://adventofcode.com/2016/day/7)   | :star2: | [year16/day07](/year16/day07) | :calling: :electric_plug: | 
