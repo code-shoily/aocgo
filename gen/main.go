@@ -25,11 +25,8 @@ func writeFromTemplate(target io.Writer, name string, content string, year int, 
 		fmt.Sprintf("%02d", day),
 	}
 
-	tpl, err := template.New(name).Parse(content)
-	check(err)
-
-	err = tpl.Execute(target, payload)
-	check(err)
+	tpl := template.Must(template.New(name).Parse(content))
+	tpl.Execute(target, payload)
 }
 
 // GenerateSources generates the source code stub given day and year
@@ -53,9 +50,9 @@ func GenerateSources(year int, day int) {
 	testFile, err := os.Create(testFileFormat)
 	check(err)
 
-	inputFile.Sync()
-	codeFile.Sync()
-	testFile.Sync()
+	defer inputFile.Close()
+	defer codeFile.Close()
+	defer testFile.Close()
 
 	writeFromTemplate(codeFile, "code", code, year, day)
 	writeFromTemplate(testFile, "test", test, year, day)
