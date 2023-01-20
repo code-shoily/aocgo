@@ -3,6 +3,7 @@ package intcode
 import (
 	"fmt"
 	"reflect"
+	"strings"
 	"testing"
 )
 
@@ -150,6 +151,88 @@ func TestParseParameterMode(t *testing.T) {
 					opCode,
 					pMode1,
 					pMode2)
+			}
+		})
+	}
+}
+
+func TestProgram_WithComparisons(t *testing.T) {
+	examples := []struct {
+		given  string
+		input  int
+		expect int
+	}{
+		{"3,9,8,9,10,9,4,9,99,-1,8", 8, 1},
+		{"3,9,8,9,10,9,4,9,99,-1,8", 7, 0},
+		{"3,9,8,9,10,9,4,9,99,-1,8", 9, 0},
+		{"3,9,7,9,10,9,4,9,99,-1,8", 5, 1},
+		{"3,9,7,9,10,9,4,9,99,-1,8", 9, 0},
+		{"3,3,1108,-1,8,3,4,3,99", 8, 1},
+		{"3,3,1108,-1,8,3,4,3,99", 7, 0},
+		{"3,3,1108,-1,8,3,4,3,99", 9, 0},
+		{"3,3,1107,-1,8,3,4,3,99", 5, 1},
+		{"3,3,1107,-1,8,3,4,3,99", 9, 0},
+	}
+
+	for _, example := range examples {
+		program := InitializeProgram(example.given, example.input)
+		name := fmt.Sprintf("testing for input %v", example.given)
+		t.Run(name, func(tt *testing.T) {
+			program.Run()
+			if got := program.Output(); example.expect != got {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
+
+func TestProgram_WithJumps(t *testing.T) {
+	examples := []struct {
+		given  string
+		input  int
+		expect int
+	}{
+		{"3,12,6,12,15,1,13,14,13,4,13,99,-1,0,1,9", 8, 1},
+		{"3,12,6,12,15,1,13,14,13,4,13,99,-1,0,1,9", 0, 0},
+		{"3,3,1105,-1,9,1101,0,0,12,4,12,99,1", 8, 1},
+		{"3,3,1105,-1,9,1101,0,0,12,4,12,99,1", 0, 0},
+	}
+
+	for _, example := range examples {
+		program := InitializeProgram(example.given, example.input)
+		name := fmt.Sprintf("testing for input %v", example.given)
+		t.Run(name, func(tt *testing.T) {
+			program.Run()
+			if got := program.Output(); example.expect != got {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
+
+func TestProgram_WithJumpsAndComparisons(t *testing.T) {
+	inputSlices := []string{
+		"3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31",
+		"1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104",
+		"999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99",
+	}
+	given := strings.Join(inputSlices, ",")
+	examples := []struct {
+		given  string
+		input  int
+		expect int
+	}{
+		{given, 7, 999},
+		{given, 8, 1000},
+		{given, 9, 1001},
+	}
+	for _, example := range examples {
+		program := InitializeProgram(example.given, example.input)
+		name := fmt.Sprintf("testing for input %v", example.given)
+		t.Run(name, func(tt *testing.T) {
+			program.Run()
+			if got := program.Output(); example.expect != got {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
 			}
 		})
 	}
