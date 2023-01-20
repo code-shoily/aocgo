@@ -6,7 +6,6 @@ import (
 	_ "embed"
 	"fmt"
 	"github.com/code-shoily/aocgo/intcode"
-	"github.com/code-shoily/aocgo/utils"
 )
 
 //go:embed input.txt
@@ -22,16 +21,16 @@ func solve(input string) (int, int) {
 }
 
 func solvePart1(input string) int {
-	program := intcode.InitializeProgram(input)
+	program := intcode.InitializeProgram(input, 0)
 	program.ProvideInitialParameters(12, 2)
 	program.Run()
 	return program.Output()
 }
 
-func solvePart2(data string) int {
+func solvePart2(input string) int {
 	for noun := 0; noun <= 99; noun++ {
 		for verb := 0; verb <= 99; verb++ {
-			program := intcode.InitializeProgram(input)
+			program := intcode.InitializeProgram(input, 0)
 			program.ProvideInitialParameters(noun, verb)
 			program.Run()
 			if program.Output() == 19_690_720 {
@@ -40,8 +39,4 @@ func solvePart2(data string) int {
 		}
 	}
 	panic("Invalid instruction")
-}
-
-func parse(input string) (data []int) {
-	return utils.SplitByInts(input, ",")
 }
