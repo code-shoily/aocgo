@@ -12,3 +12,4 @@
 |  4  | [The Ideal Stocking Stuffer](https://adventofcode.com/2015/day/4) | :star2: | [year15/day04](/year15/day04) | :hash: | 
 |  5  | [Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5) | :star2: | [year15/day05](/year15/day05) | :angel: :santa: :smiling_imp: | 
 |  6  | [Probably a Fire Hazard](https://adventofcode.com/2015/day/6) | :star2: | [year15/day06](/year15/day06) | :bulb: | 
+|  8  | [Matchsticks](https://adventofcode.com/2015/day/8) | :star2: | [year15/day08](/year15/day08) | :left_right_arrow: | 
