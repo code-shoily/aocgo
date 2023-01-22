@@ -14,16 +14,16 @@ type graphSettings struct {
 }
 
 type Graph[T comparable] struct {
-	vertices map[string]*vertex[T]
+	vertices map[string]*Vertex[T]
 	graphSettings
 }
 
-func (g *Graph[T]) Vertices() map[string]*vertex[T] {
+func (g *Graph[T]) Vertices() map[string]*Vertex[T] {
 	return g.vertices
 }
 
 // AddVertex adds a single vertex to the graph
-func (g *Graph[T]) AddVertex(v *vertex[T]) error {
+func (g *Graph[T]) AddVertex(v *Vertex[T]) error {
 	if g.HasVertex(v.id) {
 		return ErrVertexExists
 	}
@@ -51,7 +51,7 @@ func (g *Graph[T]) HasVertex(key string) bool {
 // NewGraph creates a new Graph with the given `isDirected` trait
 func NewGraph[T comparable](isDirected bool) *Graph[T] {
 	return &Graph[T]{
-		vertices: make(map[string]*vertex[T]),
+		vertices: make(map[string]*Vertex[T]),
 		graphSettings: graphSettings{
 			isDirected: isDirected,
 		},

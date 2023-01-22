@@ -72,7 +72,7 @@ func TestGraph_HasVertex(t *testing.T) {
 func TestGraph_AddEdgeDirected(t *testing.T) {
 	g := NewGraph[string](true)
 
-	vertices := []*vertex[string]{
+	vertices := []*Vertex[string]{
 		NewSimpleVertex("a"),
 		NewSimpleVertex("b"),
 		NewSimpleVertex("c"),
@@ -130,7 +130,7 @@ func TestGraph_AddEdgeDirected(t *testing.T) {
 func TestGraph_AddEdgeUndirected(t *testing.T) {
 	g := NewGraph[string](false)
 
-	vertices := []*vertex[string]{
+	vertices := []*Vertex[string]{
 		NewSimpleVertex("a"),
 		NewSimpleVertex("b"),
 		NewSimpleVertex("c"),

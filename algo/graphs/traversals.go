@@ -9,7 +9,7 @@ type PathMap map[string]Path
 func DFS[T comparable](graph *Graph[T], source string) PathMap {
 	paths := make(PathMap)
 	vertices := graph.Vertices()
-	stack := algo.Stack[*vertex[T]]{}
+	stack := algo.Stack[*Vertex[T]]{}
 	stack.Push(vertices[source])
 
 	for !stack.IsEmpty() {
