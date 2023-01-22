@@ -1,3 +1,5 @@
 .idea/
 .vscode/
+.run/
+.envrc
 input.txt
