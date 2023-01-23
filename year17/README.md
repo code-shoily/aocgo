@@ -11,4 +11,5 @@
 |  4  |           [High-Entropy Passphrases](https://adventofcode.com/2017/day/4)           | :star2: | [year17/day04](/year17/day04) |                :lock:                 | 
 |  5  | [A Maze of Twisty Trampolines, All Alike](https://adventofcode.com/2017/day/5) | :star2: | [year17/day05](/year17/day05) | :arrow_left: :arrow_right: :stop_sign: | 
 |  6  | [Memory Reallocation](https://adventofcode.com/2017/day/6) | :star2: | [year17/day06](/year17/day06) | :cd: | 
+|  9  | [Stream Processing](https://adventofcode.com/2017/day/9) | :blue_heart: | [year17/day09](/year17/day09) | :wastebasket: :ocean: | 
 
