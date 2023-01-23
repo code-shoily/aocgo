@@ -8,6 +8,7 @@ import (
 	"github.com/code-shoily/aocgo/year20/day04"
 	"github.com/code-shoily/aocgo/year20/day05"
 	"github.com/code-shoily/aocgo/year20/day06"
+	"github.com/code-shoily/aocgo/year20/day08"
 )
 
 func SolveForDay(day int) {
@@ -24,6 +25,8 @@ func SolveForDay(day int) {
 		day05.Run()
 	case 6:
 		day06.Run()
+	case 8:
+		day08.Run()
 	default:
 		fmt.Printf("2020/%d has not been solved yet", day)
 	}

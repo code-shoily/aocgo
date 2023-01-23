@@ -12,3 +12,4 @@
 |  4  | [Passport Processing](https://adventofcode.com/2020/day/4) | :tired_face: | [year20/day04](/year20/day04) | :passport_control: |
 |  5  | [Binary Boarding](https://adventofcode.com/2020/day/5) | :exploding_head: | [year20/day05](/year20/day05) | :airplane: :ticket: :zero: :one: |
 |  6  | [Custom Customs](https://adventofcode.com/2020/day/6) | :cake: | [year20/day06](/year20/day06) | :memo: |
+|  8  | [Custom Customs](https://adventofcode.com/2020/day/8) | :video_game: | [year20/day08](/year20/day08) | :computer: :warning: :infinity: |
