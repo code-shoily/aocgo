@@ -14,7 +14,7 @@ func DFS[T comparable](graph *Graph[T], source string) PathMap {
 
 	for !stack.IsEmpty() {
 		current, _ := stack.Pop()
-		outgoing, _ := current.Connections()
+		outgoing, _ := current.GetConnections()
 
 		for neighbour, _ := range outgoing {
 			stack.Push(neighbour)

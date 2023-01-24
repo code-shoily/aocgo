@@ -83,7 +83,7 @@ func luggageToGraph(luggage []luggage, transposed bool) *graphs.Graph[string] {
 }
 
 func countBags(graph *graphs.Graph[string], from *graphs.Vertex[string]) (bags int) {
-	connection, _ := from.Connections()
+	connection, _ := from.GetConnections()
 
 	for to, distance := range connection {
 		bags += distance + distance*countBags(graph, to)

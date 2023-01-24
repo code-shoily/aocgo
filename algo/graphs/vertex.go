@@ -1,12 +1,12 @@
 package graphs
 
-type connections[T any] map[*Vertex[T]]int
+type Connections[T any] map[*Vertex[T]]int
 
 type Vertex[T any] struct {
 	id       string
 	content  T
-	incoming connections[T]
-	outgoing connections[T]
+	incoming Connections[T]
+	outgoing Connections[T]
 }
 
 // ID returns the id for this vertex
@@ -29,8 +29,8 @@ func (v *Vertex[T]) AddConnection(w *Vertex[T], weight int, reciprocal bool) {
 	}
 }
 
-// Connections returns the outgoing and incoming connections
-func (v *Vertex[T]) Connections() (outgoing connections[T], incoming connections[T]) {
+// GetConnections returns the outgoing and incoming connections
+func (v *Vertex[T]) GetConnections() (outgoing Connections[T], incoming Connections[T]) {
 	return v.outgoing, v.incoming
 }
 

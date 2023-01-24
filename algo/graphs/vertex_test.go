@@ -26,20 +26,20 @@ func TestVertex_AddConnectionUnidirectional(t *testing.T) {
 	w := NewSimpleVertex("b")
 	v.AddConnection(w, 10, false)
 
-	expectedVOutgoing := connections[string]{
+	expectedVOutgoing := Connections[string]{
 		w: 10,
 	}
 
-	expectedVIncoming := connections[string]{}
+	expectedVIncoming := Connections[string]{}
 
-	expectedWOutgoing := connections[string]{}
+	expectedWOutgoing := Connections[string]{}
 
-	expectedWIncoming := connections[string]{
+	expectedWIncoming := Connections[string]{
 		v: 10,
 	}
 
-	vOutgoing, vIncoming := v.Connections()
-	wOutgoing, wIncoming := w.Connections()
+	vOutgoing, vIncoming := v.GetConnections()
+	wOutgoing, wIncoming := w.GetConnections()
 
 	if !reflect.DeepEqual(expectedVOutgoing, vOutgoing) {
 		t.Errorf("Fail v-> - expected outgoing to be %v but got %v", expectedVOutgoing, vOutgoing)
@@ -63,24 +63,24 @@ func TestVertex_AddConnectionReciprocal(t *testing.T) {
 	w := NewSimpleVertex("b")
 	v.AddConnection(w, 10, true)
 
-	expectedVOutgoing := connections[string]{
+	expectedVOutgoing := Connections[string]{
 		w: 10,
 	}
 
-	expectedVIncoming := connections[string]{
+	expectedVIncoming := Connections[string]{
 		w: 10,
 	}
 
-	expectedWOutgoing := connections[string]{
+	expectedWOutgoing := Connections[string]{
 		v: 10,
 	}
 
-	expectedWIncoming := connections[string]{
+	expectedWIncoming := Connections[string]{
 		v: 10,
 	}
 
-	vOutgoing, vIncoming := v.Connections()
-	wOutgoing, wIncoming := w.Connections()
+	vOutgoing, vIncoming := v.GetConnections()
+	wOutgoing, wIncoming := w.GetConnections()
 
 	if !reflect.DeepEqual(expectedVOutgoing, vOutgoing) {
 		t.Errorf("Fail v-> - expected outgoing to be %v but got %v", expectedVOutgoing, vOutgoing)
