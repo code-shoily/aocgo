@@ -6,8 +6,8 @@ import (
 	"testing"
 )
 
-func setUpDirectedGraph() *Graph[string] {
-	graph := NewGraph[string](true)
+func setUpDirectedGraph() *Graph {
+	graph := NewGraph(true)
 
 	for _, name := range []string{"A", "B", "C", "D", "E", "F"} {
 		v := NewSimpleVertex(name)

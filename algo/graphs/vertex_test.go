@@ -26,15 +26,15 @@ func TestVertex_AddConnectionUnidirectional(t *testing.T) {
 	w := NewSimpleVertex("b")
 	v.AddConnection(w, 10, false)
 
-	expectedVOutgoing := Connections[string]{
+	expectedVOutgoing := Connections{
 		w: 10,
 	}
 
-	expectedVIncoming := Connections[string]{}
+	expectedVIncoming := Connections{}
 
-	expectedWOutgoing := Connections[string]{}
+	expectedWOutgoing := Connections{}
 
-	expectedWIncoming := Connections[string]{
+	expectedWIncoming := Connections{
 		v: 10,
 	}
 
@@ -63,19 +63,19 @@ func TestVertex_AddConnectionReciprocal(t *testing.T) {
 	w := NewSimpleVertex("b")
 	v.AddConnection(w, 10, true)
 
-	expectedVOutgoing := Connections[string]{
+	expectedVOutgoing := Connections{
 		w: 10,
 	}
 
-	expectedVIncoming := Connections[string]{
+	expectedVIncoming := Connections{
 		w: 10,
 	}
 
-	expectedWOutgoing := Connections[string]{
+	expectedWOutgoing := Connections{
 		v: 10,
 	}
 
-	expectedWIncoming := Connections[string]{
+	expectedWIncoming := Connections{
 		v: 10,
 	}
 

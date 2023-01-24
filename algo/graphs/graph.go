@@ -13,17 +13,17 @@ type graphSettings struct {
 	isDirected bool
 }
 
-type Graph[T comparable] struct {
-	vertices map[string]*Vertex[T]
+type Graph struct {
+	vertices map[string]*Vertex
 	graphSettings
 }
 
-func (g *Graph[T]) Vertices() map[string]*Vertex[T] {
+func (g *Graph) Vertices() map[string]*Vertex {
 	return g.vertices
 }
 
 // AddVertex adds a single vertex to the graph
-func (g *Graph[T]) AddVertex(v *Vertex[T]) error {
+func (g *Graph) AddVertex(v *Vertex) error {
 	if g.HasVertex(v.id) {
 		return ErrVertexExists
 	}
@@ -32,7 +32,7 @@ func (g *Graph[T]) AddVertex(v *Vertex[T]) error {
 }
 
 // AddEdge creates a weighted edge between v1 and v2
-func (g *Graph[T]) AddEdge(v1 string, v2 string, weight int) error {
+func (g *Graph) AddEdge(v1 string, v2 string, weight int) error {
 	if !g.HasVertex(v1) || !g.HasVertex(v2) {
 		return ErrVertexDoesNotExist
 	}
@@ -43,15 +43,15 @@ func (g *Graph[T]) AddEdge(v1 string, v2 string, weight int) error {
 }
 
 // HasVertex checks if graph has vertex registered with given id
-func (g *Graph[T]) HasVertex(key string) bool {
+func (g *Graph) HasVertex(key string) bool {
 	_, exists := g.vertices[key]
 	return exists
 }
 
 // NewGraph creates a new Graph with the given `isDirected` trait
-func NewGraph[T comparable](isDirected bool) *Graph[T] {
-	return &Graph[T]{
-		vertices: make(map[string]*Vertex[T]),
+func NewGraph(isDirected bool) *Graph {
+	return &Graph{
+		vertices: make(map[string]*Vertex),
 		graphSettings: graphSettings{
 			isDirected: isDirected,
 		},

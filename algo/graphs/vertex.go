@@ -1,26 +1,26 @@
 package graphs
 
-type Connections[T any] map[*Vertex[T]]int
+type Connections map[*Vertex]int
 
-type Vertex[T any] struct {
+type Vertex struct {
 	id       string
-	content  T
-	incoming Connections[T]
-	outgoing Connections[T]
+	content  any
+	incoming Connections
+	outgoing Connections
 }
 
 // ID returns the id for this vertex
-func (v *Vertex[T]) ID() string {
+func (v *Vertex) ID() string {
 	return v.id
 }
 
 // Content returns the T content of this vertex
-func (v *Vertex[T]) Content() T {
+func (v *Vertex) Content() any {
 	return v.content
 }
 
 // AddConnection creates a connection between 2 vertices. If reciprocal is true, then a doubly linked connection is formed
-func (v *Vertex[T]) AddConnection(w *Vertex[T], weight int, reciprocal bool) {
+func (v *Vertex) AddConnection(w *Vertex, weight int, reciprocal bool) {
 	v.outgoing[w] = weight
 	w.incoming[v] = weight
 
@@ -30,26 +30,26 @@ func (v *Vertex[T]) AddConnection(w *Vertex[T], weight int, reciprocal bool) {
 }
 
 // GetConnections returns the outgoing and incoming connections
-func (v *Vertex[T]) GetConnections() (outgoing Connections[T], incoming Connections[T]) {
+func (v *Vertex) GetConnections() (outgoing Connections, incoming Connections) {
 	return v.outgoing, v.incoming
 }
 
 // String representation of this vertex
-func (v *Vertex[T]) String() string {
+func (v *Vertex) String() string {
 	return v.id
 }
 
 // NewVertex creates a new vertex with id and content
-func NewVertex[T any](id string, content T) *Vertex[T] {
-	return &Vertex[T]{
+func NewVertex(id string, content any) *Vertex {
+	return &Vertex{
 		id,
 		content,
-		make(map[*Vertex[T]]int),
-		make(map[*Vertex[T]]int),
+		make(map[*Vertex]int),
+		make(map[*Vertex]int),
 	}
 }
 
 // NewSimpleVertex creates a vertex where id and value are one and the same
-func NewSimpleVertex(value string) *Vertex[string] {
-	return NewVertex[string](value, value)
+func NewSimpleVertex(value string) *Vertex {
+	return NewVertex(value, value)
 }

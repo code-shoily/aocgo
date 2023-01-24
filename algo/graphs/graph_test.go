@@ -14,7 +14,7 @@ func TestNewGraph(t *testing.T) {
 		name := fmt.Sprintf("testing for isDirected %v", isDirected)
 
 		t.Run(name, func(tt *testing.T) {
-			g := NewGraph[string](isDirected)
+			g := NewGraph(isDirected)
 			if g.isDirected != isDirected {
 				tt.Errorf("Fail - isDirected expected %v but got %v", isDirected, g.isDirected)
 			}
@@ -23,7 +23,7 @@ func TestNewGraph(t *testing.T) {
 }
 
 func TestGraph_AddVertex(t *testing.T) {
-	g := NewGraph[string](false)
+	g := NewGraph(false)
 	a := NewSimpleVertex("a")
 	b := NewSimpleVertex("b")
 
@@ -37,7 +37,7 @@ func TestGraph_AddVertex(t *testing.T) {
 }
 
 func TestGraph_AddVertexErrorsOnDuplicate(t *testing.T) {
-	g := NewGraph[string](false)
+	g := NewGraph(false)
 	a := NewSimpleVertex("a")
 	a2 := NewSimpleVertex("a")
 
@@ -55,7 +55,7 @@ func TestGraph_AddVertexErrorsOnDuplicate(t *testing.T) {
 }
 
 func TestGraph_HasVertex(t *testing.T) {
-	g := NewGraph[string](false)
+	g := NewGraph(false)
 	a := NewSimpleVertex("a")
 	b := NewSimpleVertex("b")
 	g.AddVertex(a)
@@ -70,9 +70,9 @@ func TestGraph_HasVertex(t *testing.T) {
 }
 
 func TestGraph_AddEdgeDirected(t *testing.T) {
-	g := NewGraph[string](true)
+	g := NewGraph(true)
 
-	vertices := []*Vertex[string]{
+	vertices := []*Vertex{
 		NewSimpleVertex("a"),
 		NewSimpleVertex("b"),
 		NewSimpleVertex("c"),
@@ -128,9 +128,9 @@ func TestGraph_AddEdgeDirected(t *testing.T) {
 }
 
 func TestGraph_AddEdgeUndirected(t *testing.T) {
-	g := NewGraph[string](false)
+	g := NewGraph(false)
 
-	vertices := []*Vertex[string]{
+	vertices := []*Vertex{
 		NewSimpleVertex("a"),
 		NewSimpleVertex("b"),
 		NewSimpleVertex("c"),
@@ -192,7 +192,7 @@ func TestGraph_AddEdgeUndirected(t *testing.T) {
 	}
 }
 
-func getGraphEdges[T comparable](g *Graph[T]) map[string]map[string]int {
+func getGraphEdges(g *Graph) map[string]map[string]int {
 	edges := map[string]map[string]int{}
 	for _, v := range g.vertices {
 		edges[v.id] = map[string]int{}

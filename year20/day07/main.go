@@ -65,8 +65,8 @@ func newLuggage(containerColour, bagColour string, quantity int) *luggage {
 	return &luggage{containerColour, bagColour, quantity}
 }
 
-func luggageToGraph(luggage []luggage, transposed bool) *graphs.Graph[string] {
-	graph := graphs.NewGraph[string](true)
+func luggageToGraph(luggage []luggage, transposed bool) *graphs.Graph {
+	graph := graphs.NewGraph(true)
 
 	for _, ll := range luggage {
 		graph.AddVertex(graphs.NewSimpleVertex(ll.container))
@@ -82,7 +82,7 @@ func luggageToGraph(luggage []luggage, transposed bool) *graphs.Graph[string] {
 	return graph
 }
 
-func countBags(graph *graphs.Graph[string], from *graphs.Vertex[string]) (bags int) {
+func countBags(graph *graphs.Graph, from *graphs.Vertex) (bags int) {
 	connection, _ := from.GetConnections()
 
 	for to, distance := range connection {

@@ -55,7 +55,7 @@ func solvePart2(paths orbits) (moves int) {
 }
 
 func parse(input string) orbits {
-	graph := graphs.NewGraph[string](true)
+	graph := graphs.NewGraph(true)
 
 	for _, line := range strings.Split(input, "\n") {
 		tokens := strings.Split(line, ")")
@@ -70,6 +70,6 @@ func parse(input string) orbits {
 	return getAllOrbits(graph, "COM")
 }
 
-func getAllOrbits(graph *graphs.Graph[string], source string) orbits {
+func getAllOrbits(graph *graphs.Graph, source string) orbits {
 	return orbits(graphs.DFS(graph, source))
 }
