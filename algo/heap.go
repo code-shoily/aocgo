@@ -1,4 +1,4 @@
-package graphs
+package algo
 
 import (
 	"golang.org/x/exp/constraints"

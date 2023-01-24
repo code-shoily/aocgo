@@ -1,4 +1,4 @@
-package graphs
+package algo
 
 import (
 	"container/heap"
