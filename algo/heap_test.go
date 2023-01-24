@@ -76,3 +76,45 @@ func TestMaxHeap(t *testing.T) {
 		t.Errorf("Fail - wrong size, expected %v but got %v", true, empty)
 	}
 }
+
+func TestHeapStringSortAscending(t *testing.T) {
+	h := &Heap[string]{}
+	heap.Init(h)
+
+	heap.Push(h, "x")
+	heap.Push(h, "m")
+	heap.Push(h, "a")
+	heap.Push(h, "e")
+
+	var sorted [4]string
+	expect := [...]string{"a", "e", "m", "x"}
+
+	for i := 0; i != 4; i++ {
+		sorted[i] = heap.Pop(h).(string)
+	}
+
+	if sorted != expect {
+		t.Errorf("Fail - expected %v but got %v", expect, sorted)
+	}
+}
+
+func TestHeapStringSortDescending(t *testing.T) {
+	h := &MaxHeap[string]{}
+	heap.Init(h)
+
+	heap.Push(h, "x")
+	heap.Push(h, "m")
+	heap.Push(h, "a")
+	heap.Push(h, "e")
+
+	var sorted [4]string
+	expect := [...]string{"x", "m", "e", "a"}
+
+	for i := 0; i != 4; i++ {
+		sorted[i] = heap.Pop(h).(string)
+	}
+
+	if sorted != expect {
+		t.Errorf("Fail - expected %v but got %v", expect, sorted)
+	}
+}
