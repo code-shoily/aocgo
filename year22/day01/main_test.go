@@ -15,7 +15,7 @@ func TestSolve(t *testing.T) {
 	}
 }
 
-func BenchmarkSolvePart1(b *testing.B) {
+func BenchmarkSolve(b *testing.B) {
 	for i := 0; i < b.N; i++ {
 		solve(input)
 	}

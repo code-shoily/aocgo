@@ -1,10 +1,11 @@
 package day01
 
 import (
+	"container/heap"
 	_ "embed"
 	"fmt"
-	"sort"
-	"strconv"
+	"github.com/code-shoily/aocgo/algo"
+	"github.com/code-shoily/aocgo/utils"
 	"strings"
 )
 
@@ -16,22 +17,27 @@ func Run() {
 }
 
 func solve(input string) (int, int) {
-	var calories []int
+	calorieHeap := parse(input)
+	heap.Init(calorieHeap)
 
-	for _, cluster := range strings.Split(input, "\n\n") {
+	maxCalorie := calorieHeap.Max().(int)
+	top3CalorieSum := heap.Pop(calorieHeap).(int) +
+		heap.Pop(calorieHeap).(int) + heap.Pop(calorieHeap).(int)
+
+	return maxCalorie, top3CalorieSum
+}
+
+func parse(input string) *algo.MaxHeap[int] {
+	clusters := strings.Split(input, "\n\n")
+	calorieHeap := make(algo.MaxHeap[int], 0, len(clusters))
+
+	for _, cluster := range clusters {
 		var elfCalorie int
-		for _, line := range strings.Split(cluster, "\n") {
-			if calorie, error := strconv.Atoi(line); error == nil {
-				elfCalorie += calorie
-			} else {
-				panic("Invalid data")
-			}
+		for _, calorie := range utils.SplitIntLines(cluster) {
+			elfCalorie += calorie
 		}
-
-		calories = append(calories, elfCalorie)
+		calorieHeap.Push(elfCalorie)
 	}
 
-	sort.Sort(sort.Reverse(sort.IntSlice(calories)))
-
-	return calories[0], calories[0] + calories[1] + calories[2]
+	return &calorieHeap
 }
