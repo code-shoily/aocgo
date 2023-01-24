@@ -22,7 +22,7 @@ func solve(input string) (int, int) {
 }
 
 func solvePart1(expenses []int) int {
-	if a, b, ok := algo.TwoSum(expenses, 2020); ok {
+	if a, b, ok := algo.TwoSumSorted(expenses, 2020); ok {
 		return a * b
 	}
 
@@ -30,7 +30,7 @@ func solvePart1(expenses []int) int {
 }
 
 func solvePart2(expenses []int) int {
-	if a, b, c, ok := algo.ThreeSum(expenses, 2020); ok {
+	if a, b, c, ok := algo.ThreeSumSorted(expenses, 2020); ok {
 		return a * b * c
 	}
 
