@@ -3,39 +3,39 @@ package algo
 import "container/list"
 
 // NewQueue creates a new Queue
-func NewQueue[T any]() *Queue[T] {
-	return &Queue[T]{list.New()}
+func NewQueue() *Queue {
+	return &Queue{list.New()}
 }
 
-type Queue[T any] struct {
+type Queue struct {
 	*list.List
 }
 
 // Enqueue insers a new element on the queue
-func (q *Queue[T]) Enqueue(elem T) {
+func (q *Queue) Enqueue(elem any) {
 	q.PushBack(elem)
 }
 
 // Dequeue removes and returns the oldest element from the queue
-func (q *Queue[T]) Dequeue() (elem T, empty bool) {
+func (q *Queue) Dequeue() (elem any, empty bool) {
 	if q.IsEmpty() {
 		return elem, true
 	}
 	front := q.Front()
 	q.Remove(front)
 
-	return front.Value.(T), false
+	return front.Value, false
 }
 
 // Peek shows the oldest element in the queue without removing anything
-func (q *Queue[T]) Peek() (elem T, empty bool) {
+func (q *Queue) Peek() (elem any, empty bool) {
 	if q.IsEmpty() {
 		return elem, true
 	}
-	return q.Front().Value.(T), false
+	return q.Front().Value, false
 }
 
 // IsEmpty checks if the queue is empty
-func (q *Queue[T]) IsEmpty() bool {
+func (q *Queue) IsEmpty() bool {
 	return q.Len() == 0
 }
