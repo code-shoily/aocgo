@@ -1,6 +1,9 @@
 package algo
 
-import "math"
+import (
+	"golang.org/x/exp/constraints"
+	"math"
+)
 
 // IntToDigits explodes a number into a slice of digits.
 func IntToDigits(n int) []int {
@@ -27,4 +30,23 @@ func ToDecimal(bits []int) (decimal int) {
 		decimal += bits[i] * int(math.Pow(2, float64(size-i-1)))
 	}
 	return decimal
+}
+
+// IsEven returns if a number is even
+func IsEven[T constraints.Integer](num T) bool {
+	return num&1 == 0
+}
+
+// IsOdd returns if a number is odd
+func IsOdd[T constraints.Integer](num T) bool {
+	return !IsEven(num)
+}
+
+// CountSetBits returns the number of 1-s in a number's binary representation
+func CountSetBits[T constraints.Integer](num T) (total T) {
+	for num > 0 {
+		total += num & 1
+		num >>= 1
+	}
+	return total
 }
