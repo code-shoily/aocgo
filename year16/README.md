@@ -13,3 +13,4 @@
 |  5  |   [How About a Nice Game of Chess?](https://adventofcode.com/2016/day/5)   | :hourglass: | [year16/day05](/year16/day05) |         :hash: :chess_pawn:          | 
 |  6  |   [Signals and Noise](https://adventofcode.com/2016/day/6)   | :star2: | [year16/day06](/year16/day06) | :control_knobs: :musical_score: | 
 |  7  |   [Internet Protocol Version 7](https://adventofcode.com/2016/day/7)   | :star2: | [year16/day07](/year16/day07) | :calling: :electric_plug: | 
+|  12  |   [Leonardo's Monorail](https://adventofcode.com/2016/day/12)   | :hourglass: | [year16/day12](/year16/day12) | :steam_locomotive: :control_knobs: | 
