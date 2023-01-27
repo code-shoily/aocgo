@@ -5,7 +5,7 @@ package day{{.Day}}
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"strings"
 )
 
 //go:embed input.txt
@@ -30,5 +30,5 @@ func solvePart2(data []string) int {
 }
 
 func parse(input string) (data []string) {
-	return utils.SplitLines(input)
+	return strings.Split(input, "\n")
 }

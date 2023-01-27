@@ -1,3 +1,4 @@
+// Package seq has helpers to manipulate sequences of data.
 package seq
 
 import "golang.org/x/exp/constraints"
