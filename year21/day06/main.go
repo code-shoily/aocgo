@@ -5,7 +5,7 @@ package day06
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -23,7 +23,7 @@ func solve(input string) (int, int) {
 
 func parse(input string) []int {
 	frequency := make([]int, 9)
-	for _, t := range utils.SplitByInts(input, ",") {
+	for _, t := range io.SplitByInts(input, ",") {
 		frequency[t]++
 	}
 

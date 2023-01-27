@@ -2,7 +2,7 @@ package intcode
 
 import (
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"strconv"
 )
 
@@ -57,7 +57,7 @@ func (p *Program) getOpCode() int {
 
 // InitializeProgram initializes a program with int codes.
 func InitializeProgram(input string, startValue int) *Program {
-	return &Program{memory: utils.SplitByInts(input, ","), startValue: startValue}
+	return &Program{memory: io.SplitByInts(input, ","), startValue: startValue}
 }
 
 // OPERATIONS

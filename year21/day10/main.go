@@ -6,7 +6,7 @@ import (
 	_ "embed"
 	"fmt"
 	"github.com/code-shoily/aocgo/algo"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"sort"
 	"strings"
 )
@@ -20,7 +20,7 @@ func Run() {
 }
 
 func solve(input string) (int, int) {
-	lines := utils.SplitLines(input)
+	lines := io.SplitLines(input)
 	invalidCharCount, invalidSyntax := map[string]int{}, map[string]bool{}
 
 	return solvePart1(lines, invalidCharCount, invalidSyntax), solvePart2(lines, invalidSyntax)

@@ -6,7 +6,7 @@ import (
 	_ "embed"
 	"fmt"
 	"github.com/code-shoily/aocgo/algo/graphs"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"strings"
 )
 
@@ -36,7 +36,7 @@ func solvePart2(g *graphs.Graph) int {
 
 func parse(input string) *graphs.Graph {
 	var dependencyPairs [][2]string
-	for _, line := range utils.SplitLines(input) {
+	for _, line := range io.SplitLines(input) {
 		var from, to string
 		fmt.Sscanf(line, "Step %s must be finished before step %s can begin.", &from, &to)
 		dependencyPairs = append(dependencyPairs, [2]string{from, to})

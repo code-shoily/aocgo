@@ -5,7 +5,7 @@ package day02
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"strconv"
 )
 
@@ -41,7 +41,7 @@ func solvePart2(commands []Command) int {
 }
 
 func parse(input string) (data []Command) {
-	for _, line := range utils.SplitLines(input) {
+	for _, line := range io.SplitLines(input) {
 		data = append(data, newCommand(line))
 	}
 
@@ -83,7 +83,7 @@ func (p *Position) applyCommandV2(command Command) {
 }
 
 func newCommand(line string) Command {
-	tokens := utils.SplitBy(line, " ")
+	tokens := io.SplitBy(line, " ")
 	steps, err := strconv.Atoi(tokens[1])
 	if err != nil {
 		panic("Invalid input")

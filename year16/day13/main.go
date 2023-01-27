@@ -6,7 +6,7 @@ import (
 	_ "embed"
 	"fmt"
 	"github.com/code-shoily/aocgo/algo"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -21,7 +21,7 @@ func solve(input string) (int, int) {
 	return doBFS(
 		cubicle{1, 1, 0},
 		cubicle{31, 39, 0},
-		utils.SplitIntLines(input)[0],
+		io.SplitIntLines(input)[0],
 	)
 }
 

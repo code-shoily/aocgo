@@ -3,7 +3,7 @@ package day01
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -30,5 +30,5 @@ func nthIncreasing(sweeps []int, n int) (incr int) {
 }
 
 func parse(input string) (sweeps []int) {
-	return utils.SplitIntLines(input)
+	return io.SplitIntLines(input)
 }

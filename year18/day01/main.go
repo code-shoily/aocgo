@@ -3,7 +3,7 @@ package day01
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -40,5 +40,5 @@ func solvePart2(frequencies []int) (frequency int) {
 }
 
 func parse(input string) (frequencies []int) {
-	return utils.SplitIntLines(input)
+	return io.SplitIntLines(input)
 }

@@ -5,8 +5,8 @@ package day03
 import (
 	_ "embed"
 	"fmt"
+	"github.com/code-shoily/aocgo/io"
 	"github.com/code-shoily/aocgo/seq"
-	"github.com/code-shoily/aocgo/utils"
 )
 
 //go:embed input.txt
@@ -47,8 +47,8 @@ func solvePart2(data [][]int) (triangles int) {
 }
 
 func parse(input string) (data [][]int) {
-	for _, value := range utils.SplitLines(input) {
-		data = append(data, utils.SplitByInts(value, " "))
+	for _, value := range io.SplitLines(input) {
+		data = append(data, io.SplitByInts(value, " "))
 	}
 
 	return data

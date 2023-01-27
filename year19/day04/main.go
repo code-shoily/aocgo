@@ -6,7 +6,7 @@ import (
 	_ "embed"
 	"fmt"
 	"github.com/code-shoily/aocgo/algo"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -43,7 +43,7 @@ func solvePart2(from, to int) (total int) {
 }
 
 func parse(input string) (int, int) {
-	limits := utils.SplitByInts(input, "-")
+	limits := io.SplitByInts(input, "-")
 
 	return limits[0], limits[1]
 }

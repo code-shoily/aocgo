@@ -4,7 +4,7 @@ import (
 	_ "embed"
 	"fmt"
 	"github.com/code-shoily/aocgo/algo"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"sort"
 )
 
@@ -38,5 +38,5 @@ func solvePart2(expenses []int) int {
 }
 
 func parse(input string) (expenses []int) {
-	return utils.SplitIntLines(input)
+	return io.SplitIntLines(input)
 }

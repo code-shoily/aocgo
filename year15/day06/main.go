@@ -5,7 +5,7 @@ package day06
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"strings"
 )
 
@@ -117,7 +117,7 @@ type Instruction struct {
 }
 
 func parse(input string) (data []Instruction) {
-	for _, line := range utils.SplitLines(input) {
+	for _, line := range io.SplitLines(input) {
 		data = append(data, parseInstruction(line))
 	}
 
@@ -128,7 +128,7 @@ func parseInstruction(line string) Instruction {
 	var x1, y1, x2, y2 int
 	var op string
 
-	tokens := utils.SplitBy(line, " ")
+	tokens := io.SplitBy(line, " ")
 	if tokens[0] == "toggle" {
 		fmt.Sscanf(line[7:], "%d,%d through %d,%d", &x1, &y1, &x2, &y2)
 		return Instruction{"toggle", x1, y1, x2, y2}

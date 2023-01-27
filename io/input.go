@@ -1,4 +1,4 @@
-package utils
+package io
 
 import (
 	"strconv"
@@ -14,7 +14,7 @@ func SplitLines(lines string) []string {
 
 func SplitIntLines(lines string) (intLines []int) {
 	for _, line := range SplitLines(lines) {
-		if intLine, error := strconv.Atoi(line); error == nil {
+		if intLine, err := strconv.Atoi(line); err == nil {
 			intLines = append(intLines, intLine)
 		}
 	}
@@ -31,7 +31,7 @@ func SplitBy(line string, by string) []string {
 
 func SplitByInts(line string, by string) (intWords []int) {
 	for _, word := range SplitBy(line, by) {
-		if intWord, error := strconv.Atoi(word); error == nil {
+		if intWord, err := strconv.Atoi(word); err == nil {
 			intWords = append(intWords, intWord)
 		}
 	}

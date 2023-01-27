@@ -3,7 +3,7 @@ package day02
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -30,7 +30,7 @@ func solver(dimensions []Dimension, solveFn func(dimension Dimension) int) (tota
 }
 
 func parse(input string) (dims []Dimension) {
-	for _, line := range utils.SplitLines(input) {
+	for _, line := range io.SplitLines(input) {
 		dims = append(dims, newDimension(line))
 	}
 

@@ -5,7 +5,7 @@ package day03
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -51,7 +51,7 @@ func solvePart2(claims []Claim, tally FabricTally) int {
 }
 
 func parse(input string) (claims []Claim, tally FabricTally) {
-	for _, line := range utils.SplitLines(input) {
+	for _, line := range io.SplitLines(input) {
 		claims = append(claims, newClaim(line))
 	}
 

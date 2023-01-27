@@ -5,7 +5,7 @@ package day04
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"strings"
 )
 
@@ -34,7 +34,7 @@ func playBingo(bingo *Bingo, choices []int, firstWinnerOnly bool) int {
 
 func parse(input string) (*Bingo, []int) {
 	inputGroups := strings.Split(input, "\n\n")
-	choices := utils.SplitByInts(inputGroups[0], ",")
+	choices := io.SplitByInts(inputGroups[0], ",")
 	bingo := &Bingo{}
 
 	for _, boardInput := range inputGroups[1:] {
@@ -85,7 +85,7 @@ func NewBoard(rows []string) *Board {
 	initialScore := 0
 
 	for i, line := range rows {
-		row := utils.SplitByInts(line, " ")
+		row := io.SplitByInts(line, " ")
 		for j, cell := range row {
 			grid[cell] = [2]int{i, j}
 			initialScore += cell

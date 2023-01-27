@@ -3,7 +3,7 @@ package day01
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -36,7 +36,7 @@ func solvePart2(masses []int) (totalFuel int) {
 }
 
 func parse(input string) (masses []int) {
-	return utils.SplitIntLines(input)
+	return io.SplitIntLines(input)
 }
 
 func getFuel1(mass int) int {

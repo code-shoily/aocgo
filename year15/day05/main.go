@@ -5,7 +5,7 @@ package day05
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -42,10 +42,10 @@ func solvePart2(text [][]string) (output int) {
 }
 
 func parse(input string) [][]string {
-	lines := utils.SplitLines(input)
+	lines := io.SplitLines(input)
 	output := make([][]string, 0, len(lines))
 	for _, line := range lines {
-		output = append(output, utils.SplitBy(line, ""))
+		output = append(output, io.SplitBy(line, ""))
 	}
 
 	return output

@@ -5,7 +5,7 @@ package day05
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"sort"
 	"strconv"
 	"strings"
@@ -52,7 +52,7 @@ func solvePart2(boardingPasses [][]string) int {
 }
 
 func parse(input string) (data [][]string) {
-	for _, boardingPass := range utils.SplitLines(input) {
+	for _, boardingPass := range io.SplitLines(input) {
 		splitAt := len(boardingPass) - 3
 		rowCol := []string{
 			toBinary(boardingPass[:splitAt]),

@@ -5,7 +5,7 @@ package day02
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"strings"
 )
 
@@ -43,7 +43,7 @@ func solvePart2(data []PasswordData) (total int) {
 }
 
 func parse(input string) (data []PasswordData) {
-	for _, line := range utils.SplitLines(input) {
+	for _, line := range io.SplitLines(input) {
 		data = append(data, newPasswordData(line))
 	}
 
@@ -77,7 +77,7 @@ func (pwd PasswordData) isValidRule2() bool {
 
 func newPasswordData(line string) PasswordData {
 	tokens := parseLine(line)
-	charRange := utils.SplitByInts(tokens[0], "-")
+	charRange := io.SplitByInts(tokens[0], "-")
 
 	return PasswordData{charRange[0], charRange[1], tokens[1], tokens[2]}
 }

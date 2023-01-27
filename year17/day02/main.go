@@ -3,8 +3,8 @@ package day02
 import (
 	_ "embed"
 	"fmt"
+	"github.com/code-shoily/aocgo/io"
 	"github.com/code-shoily/aocgo/seq"
-	"github.com/code-shoily/aocgo/utils"
 )
 
 //go:embed input.txt
@@ -21,9 +21,9 @@ func solve(input string) (int, int) {
 }
 
 func parse(input string) (data [][]int) {
-	for _, line := range utils.SplitLines(input) {
+	for _, line := range io.SplitLines(input) {
 		var cells []int
-		data = append(data, append(cells, utils.SplitByInts(line, "\t")...))
+		data = append(data, append(cells, io.SplitByInts(line, "\t")...))
 	}
 
 	return data

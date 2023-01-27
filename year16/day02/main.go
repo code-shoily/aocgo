@@ -3,7 +3,7 @@ package day02
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"strings"
 )
 
@@ -40,9 +40,9 @@ func solve(input string) (string, string) {
 }
 
 func parse(input string) (instructions [][]string) {
-	for _, line := range utils.SplitLines(input) {
+	for _, line := range io.SplitLines(input) {
 		var instructionRow []string
-		instructions = append(instructions, append(instructionRow, utils.SplitBy(line, "")...))
+		instructions = append(instructions, append(instructionRow, io.SplitBy(line, "")...))
 	}
 
 	return instructions

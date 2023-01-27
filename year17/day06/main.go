@@ -5,7 +5,7 @@ package day06
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -42,7 +42,7 @@ func solve(input string) (int, int) {
 }
 
 func parse(input string) (data [size]int) {
-	for idx, val := range utils.SplitByInts(input, "\t") {
+	for idx, val := range io.SplitByInts(input, "\t") {
 		data[idx] = val
 	}
 

@@ -3,7 +3,7 @@ package day01
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -39,5 +39,5 @@ func solveCaptcha(input []int, size, offset int) (total int) {
 }
 
 func parse(input string) (values []int) {
-	return utils.SplitByInts(input, "")
+	return io.SplitByInts(input, "")
 }

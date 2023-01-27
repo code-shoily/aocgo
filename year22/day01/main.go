@@ -5,7 +5,7 @@ import (
 	_ "embed"
 	"fmt"
 	"github.com/code-shoily/aocgo/algo"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 	"strings"
 )
 
@@ -33,7 +33,7 @@ func parse(input string) *algo.MaxHeap[int] {
 
 	for _, cluster := range clusters {
 		var elfCalorie int
-		for _, calorie := range utils.SplitIntLines(cluster) {
+		for _, calorie := range io.SplitIntLines(cluster) {
 			elfCalorie += calorie
 		}
 		calorieHeap.Push(elfCalorie)

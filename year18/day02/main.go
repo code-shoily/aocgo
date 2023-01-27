@@ -3,7 +3,7 @@ package day02
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/utils"
+	"github.com/code-shoily/aocgo/io"
 )
 
 //go:embed input.txt
@@ -14,7 +14,7 @@ func Run() {
 }
 
 func solve(input string) (int, string) {
-	ids := utils.SplitLines(input)
+	ids := io.SplitLines(input)
 	return solvePart1(ids), solvePart2(ids)
 }
 
@@ -52,7 +52,7 @@ func solvePart2(ids []string) string {
 func twiceOrThrice(id string) (twice bool, thrice bool) {
 	frequency := make(map[string]int)
 
-	for _, ch := range utils.SplitBy(id, "") {
+	for _, ch := range io.SplitBy(id, "") {
 		frequency[ch]++
 	}
 

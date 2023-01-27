@@ -5,8 +5,8 @@ package day06
 import (
 	_ "embed"
 	"fmt"
+	"github.com/code-shoily/aocgo/io"
 	"github.com/code-shoily/aocgo/seq"
-	"github.com/code-shoily/aocgo/utils"
 	"math"
 	"strings"
 )
@@ -36,8 +36,8 @@ func solve(input string) (string, string) {
 }
 
 func parse(input string) (data [][]string) {
-	for _, line := range utils.SplitLines(input) {
-		data = append(data, utils.SplitBy(line, ""))
+	for _, line := range io.SplitLines(input) {
+		data = append(data, io.SplitBy(line, ""))
 	}
 
 	return data
