@@ -34,6 +34,27 @@ func setUpDirectedGraph() *Graph {
 	return graph
 }
 
+func TestPathDistance(t *testing.T) {
+	graph := setUpDirectedGraph()
+
+	examples := []struct {
+		given  Path
+		expect int
+	}{
+		{Path{"A", "B"}, 2},
+		{Path{"A", "F", "E"}, 9},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example.given)
+		t.Run(name, func(tt *testing.T) {
+			if got, err := PathDistance(graph, example.given); err != nil || got != example.expect {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
+
 func TestDFS(t *testing.T) {
 	graph := setUpDirectedGraph()
 
@@ -72,6 +93,4 @@ func TestDFS(t *testing.T) {
 			}
 		})
 	}
-
-	fmt.Println(DFS(graph, "B"))
 }
