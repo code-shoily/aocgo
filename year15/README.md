@@ -13,4 +13,5 @@
 |  5  | [Doesn't He Have Intern-Elves For This?](https://adventofcode.com/2015/day/5) | :star2: | [year15/day05](/year15/day05) | :angel: :santa: :smiling_imp: | 
 |  6  | [Probably a Fire Hazard](https://adventofcode.com/2015/day/6) | :star2: | [year15/day06](/year15/day06) | :bulb: | 
 |  8  | [Matchsticks](https://adventofcode.com/2015/day/8) | :star2: | [year15/day08](/year15/day08) | :left_right_arrow: | 
+|  9  | [All in a Single Night](https://adventofcode.com/2015/day/9) | :airplane: | [year15/day09](/year15/day09) | :world_map: :flight_departure: | 
 |  10  | [Elves Look, Elves Say](https://adventofcode.com/2015/day/10) | :star2: | [year15/day10](/year15/day10) | :eye_speech_bubble: | 
