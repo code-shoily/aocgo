@@ -8,7 +8,7 @@
 |:--:|:------------------------------------------------------------:| ---: |:-------------------------:|:-----------------------:|
 |  1  | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | :star2: | [year19/day01](/year19/day01) |             :rocket:              |
 |  2  |         [1202 Program Alarm](https://adventofcode.com/2019/day/2)         | :floppy_disk: | [year19/day02](/year19/day02) |   :robot: :floppy_disk:    |
-|  3  |         [Crossed Wires](https://adventofcode.com/2019/day/3)         | :knot: | [year19/day03](/year19/day03) |   :knot:    |
+|  3  |         [Crossed Wires](https://adventofcode.com/2019/day/3)         | :star2: | [year19/day03](/year19/day03) |   :knot:    |
 |  4  |          [Secure Container](https://adventofcode.com/2019/day/4)          | :star2: | [year19/day04](/year19/day04) | :closed_lock_with_key: :question: |
 |  5  |          [Sunny with a Chance of Asteroids](https://adventofcode.com/2019/day/5)          | :floppy_disk: :floppy_disk: | [year19/day05](/year19/day05) | :thermometer: :ringed_planet: :comet: |
 |  6  |          [Universal Orbit Map](https://adventofcode.com/2019/day/6)          | :full_moon_with_face: :full_moon_with_face: | [year19/day06](/year19/day06) | :ringed_planet: :cyclone: :artificial_satellite: |
