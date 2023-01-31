@@ -17,57 +17,56 @@ func Run() {
 }
 
 func solve(input string) int {
-	data, steps := parse(input), 1
+	sea := parse(input)
 
-	for {
-		if step(data) == 0 {
-			return steps
+	for step := 1; ; step++ {
+		if move(sea) == 0 {
+			return step
 		}
-		steps++
 	}
 }
 
-func parse(input string) (grid [][]string) {
+func parse(input string) (sea [][]string) {
 	for _, line := range strings.Split(input, "\n") {
-		grid = append(grid, strings.Split(line, ""))
+		sea = append(sea, strings.Split(line, ""))
 	}
-	return grid
+	return sea
 }
 
-func step(grid [][]string) int {
-	movements := map[[2]int]string{}
+func move(sea [][]string) int {
+	nextPositions := map[[2]int]string{}
 
-	for i := range grid {
-		for j := range grid[i] {
-			if jNext := nextCol(grid, j); grid[i][j] == ">" && grid[i][jNext] == "." {
-				movements[pos(i, j)] = "."
-				movements[pos(i, jNext)] = ">"
+	for i := range sea {
+		for j := range sea[i] {
+			if jNext := nextCol(sea, j); sea[i][j] == ">" && sea[i][jNext] == "." {
+				nextPositions[[2]int{i, j}] = "."
+				nextPositions[[2]int{i, jNext}] = ">"
 			}
 		}
 	}
 
-	mapToGrid(grid, movements)
+	updateSeaMap(sea, nextPositions)
 
-	for i := range grid {
-		for j := range grid[i] {
-			if iNext := nextRow(grid, i); grid[i][j] == "v" && grid[iNext][j] == "." {
-				movements[pos(i, j)] = "."
-				movements[pos(iNext, j)] = "v"
+	for i := range sea {
+		for j := range sea[i] {
+			if iNext := nextRow(sea, i); sea[i][j] == "v" && sea[iNext][j] == "." {
+				nextPositions[[2]int{i, j}] = "."
+				nextPositions[[2]int{iNext, j}] = "v"
 			}
 		}
 	}
 
-	mapToGrid(grid, movements)
+	updateSeaMap(sea, nextPositions)
 
-	return len(movements)
+	return len(nextPositions)
 }
 
-func nextRow(grid [][]string, i int) int { return (i + 1) % len(grid) }
-func nextCol(grid [][]string, j int) int { return (j + 1) % len(grid[0]) }
-func pos(i, j int) [2]int                { return [2]int{i, j} }
-func mapToGrid(grid [][]string, movements map[[2]int]string) {
+func nextRow(sea [][]string, i int) int { return (i + 1) % len(sea) }
+func nextCol(sea [][]string, j int) int { return (j + 1) % len(sea[0]) }
+
+func updateSeaMap(sea [][]string, movements map[[2]int]string) {
 	for position, cucumber := range movements {
 		i, j := position[0], position[1]
-		grid[i][j] = cucumber
+		sea[i][j] = cucumber
 	}
 }
