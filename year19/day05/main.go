@@ -5,7 +5,7 @@ package day05
 import (
 	_ "embed"
 	"fmt"
-	"github.com/code-shoily/aocgo/intcode"
+	"github.com/code-shoily/aocgo/year19/intcode"
 )
 
 //go:embed input.txt
