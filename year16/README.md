@@ -16,3 +16,4 @@
 |  12  |   [Leonardo's Monorail](https://adventofcode.com/2016/day/12)   | :hourglass: | [year16/day12](/year16/day12) | :steam_locomotive: :control_knobs: | 
 |  13  |   [A Maze of Twisty Little Cubicles](https://adventofcode.com/2016/day/13)   | :star2: | [year16/day12](/year16/day13) | :office: :world_map: | 
 |  16  |   [Dragon Checksum](https://adventofcode.com/2016/day/16)   | :hourglass: | [year16/day16](/year16/day16) | :dragon: | 
+|  23  |   [Safe Cracking](https://adventofcode.com/2016/day/23)   | :last_quarter_moon: | [year16/day16](/year16/day23) | :egg: :rabbit: | 
