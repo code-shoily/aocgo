@@ -13,5 +13,7 @@
 |  5  | [Supply Stacks](https://adventofcode.com/2022/day/5) | :star2: :star2: | [year22/day05](/year22/day05) | :building_construction: :package: |
 |  6  | [Tuning Trouble](https://adventofcode.com/2022/day/6) | :star2: | [year22/day06](/year22/day06) | :bookmark: |
 |  7  | [No Space Left On Device](https://adventofcode.com/2022/day/7) | :star2: | [year22/day07](/year22/day07) | :file_folder: |
+|  25  | [Full of Hot Air](https://adventofcode.com/2022/day/25) | :star2: | [year22/day25](/year22/day25) | :balloon: |
+
 
 
