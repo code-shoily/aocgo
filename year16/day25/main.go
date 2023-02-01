@@ -1,5 +1,6 @@
 // Package day25 - Solution for Advent of Code 2016/25
 // Problem Link: http://adventofcode.com/2016/day/25
+// Look ma, no input!
 package day25
 
 import (
