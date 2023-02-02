@@ -13,4 +13,5 @@
 |  6  | [Memory Reallocation](https://adventofcode.com/2017/day/6) | :star2: | [year17/day06](/year17/day06) | :cd: | 
 |  8  | [I Heard You Like Registers](https://adventofcode.com/2017/day/8) | :blue_heart: | [year17/day08](/year17/day08) | :floppy_disk: | 
 |  9  | [Stream Processing](https://adventofcode.com/2017/day/9) | :blue_heart: | [year17/day09](/year17/day09) | :wastebasket: :ocean: | 
+|  25  | [The Halting Problem](https://adventofcode.com/2017/day/25) | :star2: | [year17/day25](/year17/day25) | :stop_sign: | 
 
