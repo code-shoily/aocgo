@@ -38,7 +38,7 @@ I have not shared my inputs as it is [discouraged to share inputs](https://www.r
 |8| :1st_place_medal: | | :1st_place_medal: | | | :1st_place_medal: | | |
 |9| :1st_place_medal: | | :1st_place_medal: | | | :1st_place_medal: | | |
 |10| :1st_place_medal: | | | | | | :1st_place_medal: | |
-|11| | | | | | | :1st_place_medal: | |
+|11| :1st_place_medal: | | | | | | :1st_place_medal: | |
 |12| | :1st_place_medal: | | | | | | |
 |13| | :1st_place_medal: | | | | | | |
 |14| | | | | | | | |
