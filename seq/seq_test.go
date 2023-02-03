@@ -114,3 +114,25 @@ func TestMakeSet(t *testing.T) {
 		})
 	}
 }
+
+func TestReverse(t *testing.T) {
+	examples := []struct {
+		seq []int
+		rev []int
+	}{
+		{[]int{}, []int{}},
+		{[]int{1}, []int{1}},
+		{[]int{1, 2}, []int{2, 1}},
+		{[]int{1, 2, 3}, []int{3, 2, 1}},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example)
+
+		t.Run(name, func(tt *testing.T) {
+			if rev := Reverse(example.seq); !reflect.DeepEqual(example.rev, rev) {
+				tt.Errorf("Fail - expected %v but got %v", example.rev, rev)
+			}
+		})
+	}
+}

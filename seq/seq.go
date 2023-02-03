@@ -71,3 +71,13 @@ func MakeSet[T comparable](seq []T) map[T]bool {
 
 	return set
 }
+
+// Reverse reverses a slice
+func Reverse[T any](seq []T) []T {
+	reversed := make([]T, len(seq))
+	for idx, elem := range seq {
+		reversed[len(seq)-1-idx] = elem
+	}
+
+	return reversed
+}
