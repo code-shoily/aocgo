@@ -23,11 +23,18 @@ func solve(input string) (maxScore int, maxScore500Cals int) {
 		for peanutButter := 0; peanutButter <= 100; peanutButter++ {
 			for frosting := 0; frosting <= 100; frosting++ {
 				if sugar := 100 - sprinkles - peanutButter - frosting; sugar > 0 {
-					teaspoons := teaspoonsOf(sprinkles, peanutButter, frosting, sugar)
+					teaspoons := map[string]int{
+						"Sprinkles":    sprinkles,
+						"PeanutButter": peanutButter,
+						"Frosting":     frosting,
+						"Sugar":        sugar,
+					}
 					score, calories := nutrients.score(teaspoons)
+					// Part 1 - just get the score
 					if score > maxScore {
 						maxScore = score
 					}
+					// Part 2 - sacrifice some score for 500 calories
 					if calories == 500 && score > maxScore500Cals {
 						maxScore500Cals = score
 					}
@@ -36,7 +43,7 @@ func solve(input string) (maxScore int, maxScore500Cals int) {
 		}
 	}
 
-	return
+	return maxScore, maxScore500Cals
 }
 
 func parse(input string) (data Ingredients) {
@@ -101,14 +108,5 @@ func (ingredient Ingredient) nutrientsForQuantity(teaspoon int) map[string]int {
 		"flavor":     ingredient.flavor * teaspoon,
 		"texture":    ingredient.texture * teaspoon,
 		"calories":   ingredient.calories * teaspoon,
-	}
-}
-
-func teaspoonsOf(sprinkles int, peanutButter int, frosting int, sugar int) map[string]int {
-	return map[string]int{
-		"Sprinkles":    sprinkles,
-		"PeanutButter": peanutButter,
-		"Frosting":     frosting,
-		"Sugar":        sugar,
 	}
 }
