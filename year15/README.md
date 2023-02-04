@@ -16,3 +16,4 @@
 |  9  | [All in a Single Night](https://adventofcode.com/2015/day/9) | :airplane: | [year15/day09](/year15/day09) | :world_map: :flight_departure: | 
 |  10  | [Elves Look, Elves Say](https://adventofcode.com/2015/day/10) | :star2: | [year15/day10](/year15/day10) | :eye_speech_bubble: | 
 |  11  | [Corporate Policy](https://adventofcode.com/2015/day/11) | :star2: | [year15/day11](/year15/day11) | :closed_lock_with_key: | 
+|  12  | [JSAbacusFramework.io](https://adventofcode.com/2015/day/12) | :star2: | [year15/day12](/year15/day12) | :abacus: | 
