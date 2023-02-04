@@ -62,7 +62,7 @@ func invertFlip(b []byte) []byte {
 func computeChecksum(state []byte) []byte {
 	for algo.IsEven(len(state)) {
 		var temp []byte
-		chunks := seq.ChunkBy(state, 2)
+		chunks := seq.Chunk(state, 2, 2, true)
 		for _, pair := range chunks {
 			if pair[0] == pair[1] {
 				temp = append(temp, one)

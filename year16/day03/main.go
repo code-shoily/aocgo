@@ -36,7 +36,7 @@ func solvePart2(data [][]int) (triangles int) {
 	transposed := seq.Transpose(data)
 
 	for _, line := range transposed {
-		for _, triples := range seq.ChunkBy(line, 3) {
+		for _, triples := range seq.Chunk(line, 3, 3, true) {
 			if a, b, c := triples[0], triples[1], triples[2]; isTriangle(a, b, c) {
 				triangles++
 			}
