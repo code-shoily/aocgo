@@ -3,15 +3,22 @@ package seq
 
 import "golang.org/x/exp/constraints"
 
-// ChunkBy chunks `seq` into integer of size `by`.
-func ChunkBy[T any](seq []T, by int) (chunks [][]T) {
+// Chunk chunks `seq` into integer of `size`. `interval` decides overlap, when `discard` is true, the remainder
+// is discarded if not of equal size.
+func Chunk[T any](seq []T, size int, interval int, discard bool) (chunks [][]T) {
 	// FIXME: This only takes care of slices with lengths divisible by the chunk size.
-	for i := 0; i < len(seq); i += by {
-		chunk := make([]T, by)
-		for j := 0; j < by; j++ {
-			chunk[j] = seq[i+j]
-		}
+	i, j := 0, size
+
+	for j < len(seq) {
+		chunk := make([]T, size)
+		copy(chunk, seq[i:j])
 		chunks = append(chunks, chunk)
+		i += interval
+		j += interval
+	}
+
+	if lastChunk := seq[i:]; len(chunks[0]) == len(lastChunk) || !discard {
+		chunks = append(chunks, lastChunk)
 	}
 
 	return chunks

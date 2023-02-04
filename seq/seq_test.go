@@ -6,20 +6,69 @@ import (
 	"testing"
 )
 
-func TestChunkBy(t *testing.T) {
+func TestChunkByWithoutDiscard(t *testing.T) {
 	examples := []struct {
 		sequence []int
 		chunk    int
 		expect   [][]int
 	}{
+		{[]int{1, 2, 3}, 1, [][]int{{1}, {2}, {3}}},
 		{[]int{1, 2, 3, 4}, 2, [][]int{{1, 2}, {3, 4}}},
+		{[]int{1, 2, 3, 4, 5, 6, 7, 8, 9}, 3, [][]int{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for sequence %v chunk %v", example.sequence, example.chunk)
+		t.Run(name, func(tt *testing.T) {
+			if got := Chunk(example.sequence, example.chunk, example.chunk, false); !reflect.DeepEqual(example.expect, got) {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
+
+func TestChunkByWithDiscard(t *testing.T) {
+	examples := []struct {
+		sequence []int
+		chunk    int
+		expect   [][]int
+	}{
+		{[]int{1, 2, 3}, 1, [][]int{{1}, {2}, {3}}},
+		{[]int{1, 2, 3}, 2, [][]int{{1, 2}}},
+		{[]int{1, 2, 3, 4}, 3, [][]int{{1, 2, 3}}},
 		{[]int{1, 2, 3, 4, 5, 6}, 3, [][]int{{1, 2, 3}, {4, 5, 6}}},
 	}
 
 	for _, example := range examples {
 		name := fmt.Sprintf("testing for sequence %v chunk %v", example.sequence, example.chunk)
 		t.Run(name, func(tt *testing.T) {
-			if got := ChunkBy(example.sequence, example.chunk); !reflect.DeepEqual(example.expect, got) {
+			if got := Chunk(example.sequence, example.chunk, example.chunk, true); !reflect.DeepEqual(example.expect, got) {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
+
+func TestChunkByWithInterval(t *testing.T) {
+	examples := []struct {
+		sequence []int
+		chunk    int
+		interval int
+		discard  bool
+		expect   [][]int
+	}{
+		{[]int{1, 2, 3}, 1, 1, false, [][]int{{1}, {2}, {3}}},
+		{[]int{1, 2, 3}, 1, 1, true, [][]int{{1}, {2}, {3}}},
+		{[]int{1, 2, 3}, 2, 1, false, [][]int{{1, 2}, {2, 3}}},
+		{[]int{1, 2, 3}, 2, 1, true, [][]int{{1, 2}, {2, 3}}},
+		{[]int{1, 2, 3, 4}, 3, 2, false, [][]int{{1, 2, 3}, {3, 4}}},
+		{[]int{1, 2, 3, 4}, 3, 2, true, [][]int{{1, 2, 3}}},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for sequence %v chunk %v", example.sequence, example.chunk)
+		t.Run(name, func(tt *testing.T) {
+			if got := Chunk(example.sequence, example.chunk, example.interval, example.discard); !reflect.DeepEqual(example.expect, got) {
 				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
 			}
 		})
