@@ -18,3 +18,4 @@
 |  11  | [Corporate Policy](https://adventofcode.com/2015/day/11) | :star2: | [year15/day11](/year15/day11) | :closed_lock_with_key: | 
 |  12  | [JSAbacusFramework.io](https://adventofcode.com/2015/day/12) | :star2: | [year15/day12](/year15/day12) | :abacus: | 
 |  13  | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13) | :star2: | [year15/day13](/year15/day13) | :slightly_smiling_face: :plate_with_cutlery: :slightly_frowning_face: | 
+|  14  | [Reindeer Olympics](https://adventofcode.com/2015/day/14) | :star2: | [year15/day14](/year15/day14) | :deer: :checkered_flag: | 
