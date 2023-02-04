@@ -28,7 +28,7 @@ I have not shared my inputs as it is [discouraged to share inputs](https://www.r
 
 | Day | [2015](year15) | [2016](year16) | [2017](year17) | [2018](year18) | [2019](year19) | [2020](year20) | [2021](year21) | [2022](year22) |
 |---|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| :star: | 28 | 24 | 15 | 11 | 12 | 18 | 16 | 14 |
+| :star: | 28 | 24 | 15 | 11 | 12 | 18 | 17 | 15 |
 |1| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal:| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |3| :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
