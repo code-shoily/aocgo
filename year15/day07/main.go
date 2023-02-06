@@ -69,8 +69,6 @@ func parseWire(op string, target string) *Wire {
 		wire.upgradeToBinary(tokens[0], tokens[2], tokens[1])
 	case 2:
 		wire.upgradeToUnary(tokens[1], tokens[0])
-	default:
-		panic("parsing error")
 	}
 
 	return &wire
