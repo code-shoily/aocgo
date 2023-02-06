@@ -21,10 +21,9 @@ type Wire struct {
 func (wire *Wire) upgradeToAssignment(op1 string) {
 	if value, err := strconv.Atoi(op1); err == nil {
 		wire.value = signal(value)
-		return
+	} else {
+		wire.mapping[op1] = 1
 	}
-	wire.operation = "ASSIGN"
-	wire.mapping[op1] = 1
 }
 
 func (wire *Wire) upgradeToBinary(op1, op2, op string) {
@@ -32,9 +31,9 @@ func (wire *Wire) upgradeToBinary(op1, op2, op string) {
 
 	if op2Val, err := strconv.Atoi(op2); err == nil {
 		wire.op2Val = signal(op2Val)
-		return
+	} else {
+		wire.mapping[op2] = 2
 	}
-	wire.mapping[op2] = 2
 }
 
 func (wire *Wire) upgradeToUnary(op1, op string) {
@@ -42,9 +41,9 @@ func (wire *Wire) upgradeToUnary(op1, op string) {
 
 	if op1Val, err := strconv.Atoi(op1); err == nil {
 		wire.op1Val = signal(op1Val)
-		return
+	} else {
+		wire.mapping[op1] = 1
 	}
-	wire.mapping[op1] = 1
 }
 
 func (wire *Wire) evaluate() (evaluated bool) {
@@ -63,7 +62,7 @@ func (wire *Wire) evaluate() (evaluated bool) {
 }
 
 func (wire *Wire) binaryOp() {
-	switch strings.TrimSpace(wire.operation) {
+	switch wire.operation {
 	case "AND":
 		wire.value = wire.op1Val & wire.op2Val
 	case "OR":
@@ -83,4 +82,20 @@ func (wire *Wire) receive(opVar string, value signal) {
 		wire.op2Val = value
 	}
 	delete(wire.mapping, opVar)
+}
+
+func newWire(op string, target string) *Wire {
+	tokens := strings.Split(op, " ")
+	wire := Wire{size: len(tokens), mapping: make(map[string]int), target: target}
+
+	switch len(tokens) {
+	case 1:
+		wire.upgradeToAssignment(tokens[0])
+	case 3:
+		wire.upgradeToBinary(tokens[0], tokens[2], tokens[1])
+	case 2:
+		wire.upgradeToUnary(tokens[1], tokens[0])
+	}
+
+	return &wire
 }

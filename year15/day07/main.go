@@ -1,5 +1,6 @@
 // Package day07 - Solution for Advent of Code 2015/07
 // Problem Link: http://adventofcode.com/2015/day/07
+// FIXME: Use graphs.Graph data structure and algorithm
 package day07
 
 import (
@@ -17,19 +18,14 @@ func Run() {
 	fmt.Println(solve(input))
 }
 
-func solve(input string) (signal, signal) {
-	aSignal := solvePart1(input)
-	return aSignal, solvePart2(input, aSignal)
+func solve(input string) (part1 signal, part2 signal) {
+	part1 = connect(input, map[string]signal{})
+	part2 = connect(input, map[string]signal{"b": part1})
+	return
 }
 
-func solvePart1(input string) signal {
-	evaluated, wires := parse(input, map[string]signal{})
-	runDFS(evaluated, wires)
-	return wires["a"].value
-}
-
-func solvePart2(input string, override signal) signal {
-	evaluated, wires := parse(input, map[string]signal{"b": override})
+func connect(input string, override map[string]signal) signal {
+	evaluated, wires := parse(input, override)
 	runDFS(evaluated, wires)
 	return wires["a"].value
 }
@@ -40,7 +36,7 @@ func parse(input string, override map[string]signal) (evaluated []Wire, wires ma
 	for _, line := range strings.Split(input, "\n") {
 		tokens := strings.Split(line, " -> ")
 		op, a := tokens[1], tokens[0]
-		wires[op] = parseWire(a, op)
+		wires[op] = newWire(a, op)
 	}
 
 	updateChildren(wires)
@@ -56,22 +52,6 @@ func parse(input string, override map[string]signal) (evaluated []Wire, wires ma
 	}
 
 	return
-}
-
-func parseWire(op string, target string) *Wire {
-	tokens := strings.Split(op, " ")
-	wire := Wire{size: len(tokens), mapping: make(map[string]int), target: target}
-
-	switch len(tokens) {
-	case 1:
-		wire.upgradeToAssignment(tokens[0])
-	case 3:
-		wire.upgradeToBinary(tokens[0], tokens[2], tokens[1])
-	case 2:
-		wire.upgradeToUnary(tokens[1], tokens[0])
-	}
-
-	return &wire
 }
 
 func updateChildren(wires map[string]*Wire) {
@@ -96,6 +76,7 @@ func runDFS(evaluated []Wire, wires map[string]*Wire) {
 		for _, child := range current.children {
 			childWire := wires[child]
 			childWire.receive(current.target, current.value)
+
 			if childWire.evaluate() {
 				stack.Push(*childWire)
 			}
