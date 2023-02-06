@@ -1,5 +1,4 @@
 // Package gen has functions that help with generating code and test templates for new day
-// FIXME: Refactor the template code.
 package gen
 
 import (

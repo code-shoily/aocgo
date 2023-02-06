@@ -6,7 +6,6 @@ import "golang.org/x/exp/constraints"
 // Chunk chunks `seq` into integer of `size`. `interval` decides overlap, when `discard` is true, the remainder
 // is discarded if not of equal size.
 func Chunk[T any](seq []T, size int, interval int, discard bool) (chunks [][]T) {
-	// FIXME: This only takes care of slices with lengths divisible by the chunk size.
 	i, j := 0, size
 
 	for j < len(seq) {
