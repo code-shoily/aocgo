@@ -1,6 +1,7 @@
 package algo
 
 import (
+	"github.com/code-shoily/aocgo/seq"
 	"golang.org/x/exp/constraints"
 	"sort"
 )
@@ -63,7 +64,6 @@ func ThreeSum[N constraints.Integer](data []N, target N) (N, N, N, bool) {
 
 // SubArraySum returns the subarray that sums to given target
 func SubArraySum[N constraints.Integer](data []N, target N) (from, to int, found bool) {
-	// FIXME: What if there are duplicates?
 	memo := map[N]int{}
 	var runningSum N
 	for currentIdx, v := range data {
@@ -81,4 +81,27 @@ func SubArraySum[N constraints.Integer](data []N, target N) (from, to int, found
 	}
 
 	return
+}
+
+// SubsetSum returns a list of elements that belong to a list that sum to target
+func SubsetSum[T constraints.Integer](numbers []T, target T) (result [][]T) {
+	subsetSumUtil(numbers, target, []T{}, &result)
+	return result
+}
+
+func subsetSumUtil[T constraints.Integer](numbers []T, target T, partial []T, result *[][]T) {
+	s := seq.Sum(partial)
+
+	if s == target {
+		*result = append(*result, partial)
+	}
+	if s >= target {
+		return
+	}
+
+	for i := range numbers {
+		n := numbers[i]
+		remaining := numbers[i+1:]
+		subsetSumUtil(remaining, target, append(partial, n), result)
+	}
 }

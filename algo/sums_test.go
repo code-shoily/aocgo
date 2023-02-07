@@ -2,6 +2,7 @@ package algo
 
 import (
 	"fmt"
+	"reflect"
 	"testing"
 )
 
@@ -135,6 +136,29 @@ func TestSubArraySum(t *testing.T) {
 			if a != example.a || b != example.b || ok != example.ok {
 				t.Errorf("Fail - expected %v for %d and %d but got %v for %d and %d",
 					example.ok, example.a, example.b, ok, a, b)
+			}
+		})
+	}
+}
+
+func TestSubsetSum(t *testing.T) {
+	examples := []struct {
+		given  []int
+		target int
+		expect [][]int
+	}{
+		{[]int{1}, 1, [][]int{{1}}},
+		{[]int{1, 2}, 10, [][]int(nil)},
+		{[]int{1, 2, 3}, 3, [][]int{{1, 2}, {3}}},
+		{[]int{20, 15, 10, 5, 5}, 25, [][]int{{20, 5}, {20, 5}, {15, 10}, {15, 5, 5}}},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("Testing for input %v", example.given)
+		t.Run(name, func(t *testing.T) {
+
+			if got := SubsetSum(example.given, example.target); !reflect.DeepEqual(example.expect, got) {
+				t.Errorf("Fail - expected %v but got %v", example.expect, got)
 			}
 		})
 	}

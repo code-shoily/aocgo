@@ -185,3 +185,24 @@ func TestReverse(t *testing.T) {
 		})
 	}
 }
+
+func TestSum(t *testing.T) {
+	examples := []struct {
+		given  []int
+		expect int
+	}{
+		{[]int{1}, 1},
+		{[]int{1, 2}, 3},
+		{[]int{1, 2, 3}, 6},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example.given)
+
+		t.Run(name, func(tt *testing.T) {
+			if total := Sum(example.given); total != example.expect {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, total)
+			}
+		})
+	}
+}
