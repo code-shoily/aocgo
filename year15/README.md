@@ -21,3 +21,4 @@
 |  13  | [Knights of the Dinner Table](https://adventofcode.com/2015/day/13) | :star2: | [year15/day13](/year15/day13) | :slightly_smiling_face: :plate_with_cutlery: :slightly_frowning_face: | 
 |  14  | [Reindeer Olympics](https://adventofcode.com/2015/day/14) | :star2: | [year15/day14](/year15/day14) | :deer: :checkered_flag: | 
 |  15  | [Science for Hungry People](https://adventofcode.com/2015/day/15) | :star2: | [year15/day15](/year15/day15) | :doughnut: :lollipop: :cake: | 
+|  17  | [No Such Thing as Too Much](https://adventofcode.com/2015/day/17) | :star2: | [year15/day17](/year15/day17) | :beverage_box: | 
