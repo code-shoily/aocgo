@@ -93,15 +93,15 @@ func subsetSumUtil[T constraints.Integer](numbers []T, target T, partial []T, re
 	s := seq.Sum(partial)
 
 	if s == target {
-		*result = append(*result, partial)
+		subsetSum := make([]T, len(partial))
+		copy(subsetSum, partial)
+		*result = append(*result, subsetSum)
 	}
-	if s >= target {
-		return
-	}
-
-	for i := range numbers {
-		n := numbers[i]
-		remaining := numbers[i+1:]
-		subsetSumUtil(remaining, target, append(partial, n), result)
+	if s < target {
+		for i := range numbers {
+			n := numbers[i]
+			remaining := numbers[i+1:]
+			subsetSumUtil(remaining, target, append(partial, n), result)
+		}
 	}
 }
