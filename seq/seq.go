@@ -95,3 +95,12 @@ func Sum[T constraints.Integer | constraints.Float](seq []T) (total T) {
 	}
 	return
 }
+
+// Product returns the multiplication of all elements of a sequence
+func Product[T constraints.Integer | constraints.Float](seq []T) T {
+	total := T(1)
+	for _, elem := range seq {
+		total *= elem
+	}
+	return total
+}

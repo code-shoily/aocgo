@@ -206,3 +206,25 @@ func TestSum(t *testing.T) {
 		})
 	}
 }
+
+func TestProduct(t *testing.T) {
+	examples := []struct {
+		given  []int
+		expect int
+	}{
+		{[]int{1}, 1},
+		{[]int{1, 2}, 2},
+		{[]int{1, 2, 3}, 6},
+		{[]int{1, 2, 3, 4}, 24},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example.given)
+
+		t.Run(name, func(tt *testing.T) {
+			if total := Product(example.given); total != example.expect {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, total)
+			}
+		})
+	}
+}
