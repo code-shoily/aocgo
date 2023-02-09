@@ -24,11 +24,11 @@ I am using `embed` and `generics` to solve problems. So at least go `1.18` is ne
 
 I have not shared my inputs as it is [discouraged to share inputs](https://www.reddit.com/r/adventofcode/comments/k99rod/sharing_input_data_were_we_requested_not_to/) on public repository and I respect that. I will purge my past shares soon as I didn't know of info. 
 
-## Progress - 73.5 of 200
+## Progress - 74.5 of 200
 
 | Day | [2015](year15) | [2016](year16) | [2017](year17) | [2018](year18) | [2019](year19) | [2020](year20) | [2021](year21) | [2022](year22) |
 |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| :star: | 35 | 24 | 15 | 11 | 12 | 18 | 17 | 15 |
+| :star: | 37 | 24 | 15 | 11 | 12 | 18 | 17 | 15 |
 |1| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal:| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |3| :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
@@ -48,7 +48,7 @@ I have not shared my inputs as it is [discouraged to share inputs](https://www.r
 |17| :1st_place_medal: | | | | | | | |
 |18| | | | | | | | |
 |19| | | | | | | | |
-|20| | :1st_place_medal: | | | | | | |
+|20| :1st_place_medal: | :1st_place_medal: | | | | | | |
 |21| | | | | | | | |
 |22| | | | | | | | |
 |23| | :2nd_place_medal: | | | | | | |
