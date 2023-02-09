@@ -22,4 +22,6 @@
 |  14  | [Reindeer Olympics](https://adventofcode.com/2015/day/14) | :star2: | [year15/day14](/year15/day14) | :deer: :checkered_flag: | 
 |  15  | [Science for Hungry People](https://adventofcode.com/2015/day/15) | :star2: | [year15/day15](/year15/day15) | :doughnut: :lollipop: :cake: | 
 |  17  | [No Such Thing as Too Much](https://adventofcode.com/2015/day/17) | :star2: | [year15/day17](/year15/day17) | :beverage_box: | 
+|  20  | [Infinite Elves and Infinite Houses](https://adventofcode.com/2015/day/20) | :star2: | [year15/day20](/year15/day20) |  :elf: :gift: :infinity: :house: | 
 |  24  | [It Hangs in the Balance](https://adventofcode.com/2015/day/24) | :hourglass: | [year15/day24](/year15/day24) | :balance_scale: :package: | 
+|  25  | [Let it Snow](https://adventofcode.com/2015/day/25) | :star2: | [year15/day25](/year15/day25) | :cloud_with_snow: | 
