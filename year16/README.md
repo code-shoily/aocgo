@@ -17,5 +17,6 @@
 |  13  |   [A Maze of Twisty Little Cubicles](https://adventofcode.com/2016/day/13)   | :star2: | [year16/day12](/year16/day13) | :office: :world_map: | 
 |  16  |   [Dragon Checksum](https://adventofcode.com/2016/day/16)   | :hourglass: | [year16/day16](/year16/day16) | :dragon: | 
 |  20  |   [Firewall Rules](https://adventofcode.com/2016/day/20)   | :green_heart: | [year16/day20](/year16/day20) | :fire: :bricks: | 
+|  21  |   [Scrambled Letters and Hash](https://adventofcode.com/2016/day/21)   | :hourglass: :persevere: | [year16/day21](/year16/day21) | :file_cabinet: :lock: | 
 |  23  |   [Safe Cracking](https://adventofcode.com/2016/day/23)   | :last_quarter_moon: | [year16/day16](/year16/day23) | :egg: :rabbit: | 
 |  25  |   [Clock Signal](https://adventofcode.com/2016/day/25)   | :eyes: :eyes: | [year16/day16](/year16/day23) | :clock1230: | 
