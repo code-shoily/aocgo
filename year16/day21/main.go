@@ -25,7 +25,7 @@ func solve(input string) (string, string) {
 	}
 
 	solvePart2 := func() string {
-		for _, password := range permutations(initial) {
+		for _, password := range seq.StringPermutations(initial) {
 			if scramble(password, input) == target {
 				return password
 			}
@@ -34,15 +34,6 @@ func solve(input string) (string, string) {
 	}
 
 	return solvePart1(), solvePart2()
-}
-
-func permutations(password string) []string {
-	perms := seq.Permutations([]rune(password))
-	output := make([]string, len(perms))
-	for idx, value := range perms {
-		output[idx] = string(value)
-	}
-	return output
 }
 
 func scramble(password string, rules string) string {
