@@ -40,3 +40,23 @@ func TestPermutations(t *testing.T) {
 		})
 	}
 }
+
+func TestStringPermutations(t *testing.T) {
+	examples := []struct {
+		given  string
+		expect []string
+	}{
+		{"a", []string{"a"}},
+		{"ab", []string{"ab", "ba"}},
+		{"abc", []string{"abc", "bac", "cba", "bca", "cab", "acb"}},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example.given)
+		t.Run(name, func(tt *testing.T) {
+			if got := StringPermutations(example.given); !reflect.DeepEqual(got, example.expect) {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}

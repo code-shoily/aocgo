@@ -25,3 +25,13 @@ func Permutations[T any](array []T) (result [][]T) {
 
 	return result
 }
+
+// StringPermutations prints all possible words by scrambling the given word
+func StringPermutations(word string) []string {
+	perms := Permutations([]rune(word))
+	output := make([]string, len(perms))
+	for idx, value := range perms {
+		output[idx] = string(value)
+	}
+	return output
+}
