@@ -11,7 +11,7 @@ type Queue struct {
 	*list.List
 }
 
-// Enqueue insers a new element on the queue
+// Enqueue inserts a new element on the queue
 func (q *Queue) Enqueue(elem any) {
 	q.PushBack(elem)
 }
@@ -25,6 +25,17 @@ func (q *Queue) Dequeue() (elem any, empty bool) {
 	q.Remove(front)
 
 	return front.Value, false
+}
+
+// MustDequeue removes and returns the oldest element from the queue, panics if empty
+func (q *Queue) MustDequeue() any {
+	if q.IsEmpty() {
+		panic("empty queue")
+	}
+	front := q.Front()
+	q.Remove(front)
+
+	return front.Value
 }
 
 // Peek shows the oldest element in the queue without removing anything

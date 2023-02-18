@@ -42,6 +42,23 @@ func TestQueue_EnqueueDeque(t *testing.T) {
 	}
 }
 
+func TestQueue_MustDeque(t *testing.T) {
+	queue := NewQueue()
+	queue.Enqueue(1)
+	queue.Enqueue(2)
+	queue.Enqueue(3)
+
+	if e := queue.MustDequeue(); e != 1 {
+		t.Errorf("Fail - %v expected, got %v", 1, e)
+	}
+	if e := queue.MustDequeue(); e != 2 {
+		t.Errorf("Fail - %v expected, got %v", 1, e)
+	}
+	if e := queue.MustDequeue(); e != 3 {
+		t.Errorf("Fail - %v expected, got %v", 1, e)
+	}
+}
+
 func TestQueue_Peek(t *testing.T) {
 	queue := NewQueue()
 	queue.Enqueue(1)
