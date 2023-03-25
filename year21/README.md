@@ -12,6 +12,7 @@
 |  4  |    [Giant Squid](https://adventofcode.com/2021/day/4)    | :dizzy_face: :dizzy_face: | [year21/day04](/year21/day04) | :octopus: :slot_machine: |
 |  5  |    [Hydrothermal Venture](https://adventofcode.com/2021/day/5)    | :vomiting_face: | [year21/day05](/year21/day05) | :straight_ruler: :triangular_ruler: |
 |  6  |    [Lanternfish](https://adventofcode.com/2021/day/6)    | :star2: | [year21/day06](/year21/day06) | :bucket: :lantern: :heavy_multiplication_x: :fish: |
+|  7  |    [The Treachery of Whales](https://adventofcode.com/2021/day/7)    | :star2: | [year21/day07](/year21/day07) | :crab: :fuelpump: :arrow_left: :arrow_right: |
 |  10  |    [Syntax Scoring](https://adventofcode.com/2021/day/10)    | :star2: | [year21/day10](/year21/day10) | :interrobang:  |
 |  11  |    [Dumbo Octopus](https://adventofcode.com/2021/day/11)    | :star2: | [year21/day11](/year21/day11) | :octopus: :flashlight: |
 |  25  |    [Sea Cucumber](https://adventofcode.com/2021/day/25)    | :star2: :star2: | [year21/day25](/year21/day25) | :cucumber: :ocean: |

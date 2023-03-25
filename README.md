@@ -24,18 +24,18 @@ I am using `embed` and `generics` to solve problems. So at least go `1.18` is ne
 
 I have not shared my inputs as it is [discouraged to share inputs](https://www.reddit.com/r/adventofcode/comments/k99rod/sharing_input_data_were_we_requested_not_to/) on public repository and I respect that. I will purge my past shares soon as I didn't know of info. 
 
-## Progress - 76.5 of 200
+## Progress - 77.5 of 200
 
 | Day | [2015](year15) | [2016](year16) | [2017](year17) | [2018](year18) | [2019](year19) | [2020](year20) | [2021](year21) | [2022](year22) |
 |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-| :star: | 37 | 26 | 15 | 11 | 12 | 18 | 17 | 15 |
+| :star: | 37 | 26 | 15 | 11 | 12 | 18 | 19 | 15 |
 |1| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal:| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |3| :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |4| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |5| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
 |6| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-|7| :1st_place_medal: | :1st_place_medal: | | :2nd_place_medal: | | :1st_place_medal: | | :1st_place_medal: |
+|7| :1st_place_medal: | :1st_place_medal: | | :2nd_place_medal: | | :1st_place_medal: |  :1st_place_medal: | :1st_place_medal: |
 |8| :1st_place_medal: | | :1st_place_medal: | | | :1st_place_medal: | | |
 |9| :1st_place_medal: | | :1st_place_medal: | | | :1st_place_medal: | | |
 |10| :1st_place_medal: | | | | | | :1st_place_medal: | |

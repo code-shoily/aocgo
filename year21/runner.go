@@ -8,6 +8,7 @@ import (
 	"github.com/code-shoily/aocgo/year21/day04"
 	"github.com/code-shoily/aocgo/year21/day05"
 	"github.com/code-shoily/aocgo/year21/day06"
+	"github.com/code-shoily/aocgo/year21/day07"
 	"github.com/code-shoily/aocgo/year21/day10"
 	"github.com/code-shoily/aocgo/year21/day11"
 	"github.com/code-shoily/aocgo/year21/day25"
@@ -27,6 +28,8 @@ func SolveForDay(day int) {
 		day05.Run()
 	case 6:
 		day06.Run()
+	case 7:
+		day07.Run()
 	case 10:
 		day10.Run()
 	case 11:
