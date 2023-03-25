@@ -94,3 +94,67 @@ func TestCountSetBits(t *testing.T) {
 		})
 	}
 }
+
+func TestSum(t *testing.T) {
+	examples := []struct {
+		given  []int
+		expect int
+	}{
+		{[]int{}, 0},
+		{[]int{1}, 1},
+		{[]int{1, 2, -3}, 0},
+		{[]int{1, 2, 3}, 6},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example.given)
+		t.Run(name, func(tt *testing.T) {
+			if got := Sum(example.given); got != example.expect {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
+
+func TestMean(t *testing.T) {
+	examples := []struct {
+		given  []int
+		expect float64
+	}{
+		{[]int{1}, 1},
+		{[]int{-1}, -1},
+		{[]int{1, 2, -3}, 0},
+		{[]int{1, 2, 3}, 2},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example.given)
+		t.Run(name, func(tt *testing.T) {
+			if got := Mean(example.given); got != example.expect {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
+
+func TestMedian(t *testing.T) {
+	examples := []struct {
+		given  []int
+		expect float64
+	}{
+		{[]int{1}, 1},
+		{[]int{-1}, -1},
+		{[]int{1, 2, 3}, 2},
+		{[]int{1, 22, -3, 4, 6}, 4},
+		{[]int{16, 1, 2, 0, 4, 2, 7, 1, 2, 14}, 2},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example.given)
+		t.Run(name, func(tt *testing.T) {
+			if got := Median(example.given); got != example.expect {
+				tt.Errorf("Fail - expected %v but got %v", example.expect, got)
+			}
+		})
+	}
+}
