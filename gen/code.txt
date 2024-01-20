@@ -1,7 +1,5 @@
 // Package day{{.Day}} - Solution for Advent of Code {{.Year}}/{{.Day}}
 // Problem Link: http://adventofcode.com/{{.Year}}/day/{{.Day}}
-// Difficulty: -
-// Tags: -
 package day{{.Day}}
 
 import (

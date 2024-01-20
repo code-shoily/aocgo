@@ -4,7 +4,7 @@
 
 [2015](/year15) | [2016](/year16) | [2017](/year17) | [2018](/year18) | [2019](/year19) | [2020](/year20) | [2021](/year21) | 2022
 
-| Day |                      Problem Page                       | Difficulty |       Solution Page       |               :wink:               |
+| Day |                      Problem Page                       | Feel |       Solution Page       |               :wink:               |
 |:--:|:-------------------------------------------------------:| ---: |:-------------------------:|:----------------------------------:|
 |  1 | [Calorie Counting](https://adventofcode.com/2022/day/1) | :star2: | [year22/day01](/year22/day01) |               :cake:               |
 |  2 | [Rock Paper Scissors](https://adventofcode.com/2022/day/2) | :star2: | [year22/day02](/year22/day02) | :rock: :page_with_curl: :scissors: |

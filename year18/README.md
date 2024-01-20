@@ -4,7 +4,7 @@
 
 [2015](/year15) | [2016](/year16) | [2017](/year17) | 2018 | [2019](/year19) | [2020](/year20) | [2021](/year21) | [2022](/year22) | [2023](/year23)
 
-| Day |                            Problem Page                            | Difficulty |       Solution Page       |           :wink:           | 
+| Day |                            Problem Page                            | Feel |       Solution Page       |           :wink:           | 
 |:--:|:------------------------------------------------------------------:| ---: |:-------------------------:|:--------------------------:| 
 |  1 |     [Chronal Calibration](https://adventofcode.com/2018/day/1)     | :star2: | [year18/day01](/year18/day01) | :chart_with_upwards_trend: | 
 |  2 | [Inventory Management System](https://adventofcode.com/2018/day/2) | :star2: | [year18/day02](/year18/day02) |    :package: :factory:     | 

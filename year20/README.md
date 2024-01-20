@@ -4,7 +4,7 @@
 
 [2015](/year15) | [2016](/year16) | [2017](/year17) | [2018](/year18) | [2019](/year19) | 2020 | [2021](/year21) | [2022](/year22) | [2023](/year23)
 
-| Day |                        Problem Page                        | Difficulty |        Solution Page        |                    :wink:                     |
+| Day |                        Problem Page                        | Feel |        Solution Page        |                    :wink:                     |
 |:--:|:----------------------------------------------------------:| ---: |:---------------------------:|:---------------------------------------------:|
 |  1 |    [Report Repair](https://adventofcode.com/2020/day/1)    | :star2: | [year20/day01](/year20/day01) | :heavy_dollar_sign: :two: :zero: :two: :zero: |
 |  2 | [Password Philosophy](https://adventofcode.com/2020/day/2) | :star2: | [year20/day02](/year20/day02) | :lock: |

@@ -1,7 +1,5 @@
-// Package day01 - Trebuchet?!
+// Package day01 - Solution for Advent of Code 2023/01
 // Problem Link: http://adventofcode.com/2023/day/01
-// Difficulty: *
-// Tags: regex
 package day01
 
 import (

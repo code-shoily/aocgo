@@ -4,7 +4,7 @@
 
 [2015](/year15) | 2016 | [2017](/year17) | [2018](/year18) | [2019](/year19) | [2020](/year20) | [2021](/year21) | [2022](/year22) | [2023](/year23)
 
-| Day |                         Problem Page                         | Difficulty |       Solution Page       |         :wink:          | 
+| Day |                         Problem Page                         | Feel |       Solution Page       |         :wink:          | 
 |:--:|:------------------------------------------------------------:| ---: |:-------------------------:|:-----------------------:| 
 |  1 | [No Time for a Taxicab](https://adventofcode.com/2016/day/1) | :star2: | [year16/day01](/year16/day01) | :parachute: :world_map: | 
 |  2 |   [Bathroom Security](https://adventofcode.com/2016/day/2)   | :star2: | [year16/day02](/year16/day02) |         :bath: :closed_lock_with_key:         | 

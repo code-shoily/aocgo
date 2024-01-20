@@ -4,7 +4,7 @@
 
 [2015](/year15) | [2016](/year16) | [2017](/year17) | [2018](/year18) | 2019 | [2020](/year20) | [2021](/year21) | [2022](/year22) | [2023](/year23)
 
-| Day |                         Problem Page                         | Difficulty |       Solution Page       |         :wink:          |
+| Day |                         Problem Page                         | Feel |       Solution Page       |         :wink:          |
 |:--:|:------------------------------------------------------------:| ---: |:-------------------------:|:-----------------------:|
 |  1  | [The Tyranny of the Rocket Equation](https://adventofcode.com/2019/day/1) | :star2: | [year19/day01](/year19/day01) |             :rocket:              |
 |  2  |         [1202 Program Alarm](https://adventofcode.com/2019/day/2)         | :floppy_disk: | [year19/day02](/year19/day02) |   :robot: :floppy_disk:    |

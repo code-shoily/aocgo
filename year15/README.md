@@ -4,7 +4,7 @@
 
 2015 | [2016](/year16) | [2017](/year17) | [2018](/year18) | [2019](/year19) | [2020](/year20) | [2021](/year21) | [2022](/year22) | [2023](/year23)
 
-| Day |                               Problem Page                               | Difficulty |       Solution Page       |    :wink:    | 
+| Day |                               Problem Page                               | Feel |       Solution Page       |    :wink:    | 
 |:--:|:------------------------------------------------------------------------:| ---: |:-------------------------:|:------------:|
 |  1 |          [Not Quite Lisp](https://adventofcode.com/2015/day/1)           | :star2: | [year15/day01](/year15/day01) |   :ladder:   | 
 |  2 | [I Was Told There Would Be No Math](https://adventofcode.com/2015/day/2) | :star2: | [year15/day02](/year15/day02) | :gift_heart: | 
