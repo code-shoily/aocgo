@@ -20,10 +20,6 @@ Note, empty `input.txt` is create after `gen` (or `g`) command for now. You will
 
 I am using `embed` and `generics` to solve problems. So at least go `1.18` is needed to run these. 
 
-**Where are the input files?**
-
-I have not shared my inputs as it is [discouraged to share inputs](https://www.reddit.com/r/adventofcode/comments/k99rod/sharing_input_data_were_we_requested_not_to/) on public repository and I respect that. I will purge my past shares soon as I didn't know of info. 
-
 ## Progress - 77.5 of 200
 
 | Day | [2015](year15) | [2016](year16) | [2017](year17) | [2018](year18) | [2019](year19) | [2020](year20) | [2021](year21) | [2022](year22) |

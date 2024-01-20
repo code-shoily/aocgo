@@ -25,7 +25,10 @@ func writeFromTemplate(target io.Writer, name string, content string, year int, 
 	}
 
 	tpl := template.Must(template.New(name).Parse(content))
-	tpl.Execute(target, payload)
+	err := tpl.Execute(target, payload)
+	if err != nil {
+		panic("Template does not exist")
+	}
 }
 
 // GenerateSources generates the source code stub given day and year
@@ -49,9 +52,9 @@ func GenerateSources(year int, day int) {
 	testFile, err := os.Create(testFileFormat)
 	check(err)
 
-	defer inputFile.Close()
-	defer codeFile.Close()
-	defer testFile.Close()
+	defer checkCloseFile(inputFile)
+	defer checkCloseFile(codeFile)
+	defer checkCloseFile(testFile)
 
 	writeFromTemplate(codeFile, "code", code, year, day)
 	writeFromTemplate(testFile, "test", test, year, day)
@@ -61,6 +64,13 @@ func GenerateSources(year int, day int) {
 		inputFile.Name(),
 		codeFile.Name(),
 		testFile.Name())
+}
+
+func checkCloseFile(file *os.File) {
+	err := file.Close()
+	if err != nil {
+		panic(err)
+	}
 }
 
 func check(e error) {
