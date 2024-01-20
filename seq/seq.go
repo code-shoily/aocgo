@@ -88,6 +88,11 @@ func Reverse[T any](seq []T) []T {
 	return reversed
 }
 
+// Reverses a string
+func ReverseString(s string) string {
+	return string(Reverse[rune]([]rune(s)))
+}
+
 // Sum returns the total of a sequence
 func Sum[T constraints.Integer | constraints.Float](seq []T) (total T) {
 	for _, elem := range seq {

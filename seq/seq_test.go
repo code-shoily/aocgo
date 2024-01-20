@@ -186,6 +186,27 @@ func TestReverse(t *testing.T) {
 	}
 }
 
+func TestReverseString(t *testing.T) {
+	examples := []struct {
+		seq string
+		rev string
+	}{
+		{"", ""},
+		{"a", "a"},
+		{"aoc", "coa"},
+	}
+
+	for _, example := range examples {
+		name := fmt.Sprintf("testing for input %v", example)
+
+		t.Run(name, func(tt *testing.T) {
+			if rev := ReverseString(example.seq); rev != example.rev {
+				tt.Errorf("Fail - expected %v but got %v", example.rev, rev)
+			}
+		})
+	}
+}
+
 func TestSum(t *testing.T) {
 	examples := []struct {
 		given  []int
