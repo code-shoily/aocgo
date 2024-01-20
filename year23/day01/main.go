@@ -21,23 +21,7 @@ func Run() {
 
 func solve(input string) (int, int) {
 	data := parse(input)
-	return solvePart1(data), solvePart2(data)
-}
-
-func solvePart1(data []string) int {
-	var result int
-	for _, line := range data {
-		result += calibrationValue(line, digits, digits)
-	}
-	return result
-}
-
-func solvePart2(data []string) int {
-	var result int
-	for _, line := range data {
-		result += calibrationValue(line, words, wordsRev)
-	}
-	return result
+	return calibrateAll(data, digits, digits), calibrateAll(data, words, wordsRev)
 }
 
 func parse(input string) (data []string) {
@@ -48,11 +32,19 @@ var digits = regexp.MustCompile("1|2|3|4|5|6|7|8|9")
 var words = regexp.MustCompile("1|2|3|4|5|6|7|8|9|one|two|three|four|five|six|seven|eight|nine")
 var wordsRev = regexp.MustCompile("1|2|3|4|5|6|7|8|9|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin")
 
-func calibrationValue(line string, forward *regexp.Regexp, backward *regexp.Regexp) int {
-	first := forward.FindString(line)
-	last := backward.FindString(seq.ReverseString(line))
+func calibrateAll(data []string, forward *regexp.Regexp, backward *regexp.Regexp) int {
+	calibrate := func(line string) int {
+		ten := forward.FindString(line)
+		one := backward.FindString(seq.ReverseString(line))
 
-	return toDigit(first)*10 + toDigit(last)
+		return toDigit(ten)*10 + toDigit(one)
+	}
+
+	var result int
+	for _, line := range data {
+		result += calibrate(line)
+	}
+	return result
 }
 
 func toDigit(value string) int {
