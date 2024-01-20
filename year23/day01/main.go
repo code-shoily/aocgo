@@ -49,9 +49,8 @@ var words = regexp.MustCompile("1|2|3|4|5|6|7|8|9|one|two|three|four|five|six|se
 var wordsRev = regexp.MustCompile("1|2|3|4|5|6|7|8|9|eno|owt|eerht|ruof|evif|xis|neves|thgie|enin")
 
 func calibrationValue(line string, forward *regexp.Regexp, backward *regexp.Regexp) int {
-	lineReversed := string(seq.Reverse[rune]([]rune(line)))
 	first := forward.FindString(line)
-	last := backward.FindString(lineReversed)
+	last := backward.FindString(seq.ReverseString(line))
 
 	return toDigit(first)*10 + toDigit(last)
 }
