@@ -3,6 +3,9 @@ package main
 import (
 	"errors"
 	"fmt"
+	"os"
+	"strconv"
+
 	"github.com/code-shoily/aocgo/gen"
 	"github.com/code-shoily/aocgo/year15"
 	"github.com/code-shoily/aocgo/year16"
@@ -13,11 +16,10 @@ import (
 	"github.com/code-shoily/aocgo/year21"
 	"github.com/code-shoily/aocgo/year22"
 	"github.com/code-shoily/aocgo/year23"
-	"os"
-	"strconv"
+	"github.com/code-shoily/aocgo/year24"
 )
 
-const currentYear = 2023
+const currentYear = 2024
 
 func validate(year, day int) error {
 	if year < 2015 || year > currentYear {
@@ -49,6 +51,8 @@ func solve(year, day int) {
 		year22.SolveForDay(day)
 	case 2023:
 		year23.SolveForDay(day)
+	case 2024:
+		year24.SolveForDay(day)
 	}
 }
 
