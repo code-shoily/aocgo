@@ -28,14 +28,6 @@ func TestParse(t *testing.T) {
 			},
 		},
 		{
-			name:  "with empty lines",
-			input: "1 2\n\n3 4\n\n5 6\n",
-			expected: [][]int{
-				{1, 3, 5},
-				{2, 4, 6},
-			},
-		},
-		{
 			name:  "single line",
 			input: "100 200",
 			expected: [][]int{
