@@ -7,3 +7,4 @@
 | Day |                    Problem Page                    | Feel |         Solution Page         |         :wink:          | 
 |:--:|:--------------------------------------------------:| ---: |:-----------------------------:|:-----------------------:| 
 |  1 | [Historian Hysteria](https://adventofcode.com/2024/day/1) | :star2: | [year24/day01](/year24/day01) | :hourglass_flowing_sand: | 
+|  2 | [Red-Nosed Reports](https://adventofcode.com/2024/day/2) | :star2: | [year24/day02](/year24/day02) | :white_check_mark: | 

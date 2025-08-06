@@ -14,6 +14,6 @@ func SolveForDay(day int) {
 	case 2:
 		day02.Run()
 	default:
-		fmt.Printf("2023/%d has not been solved yet", day)
+		fmt.Printf("2024/%d has not been solved yet", day)
 	}
 }

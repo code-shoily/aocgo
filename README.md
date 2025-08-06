@@ -20,13 +20,13 @@ Note, empty `input.txt` is create after `gen` (or `g`) command for now. You will
 
 I am using `embed` and `generics` to solve problems. So at least go `1.18` is needed to run these. 
 
-## Progress - 159 of 500
+## Progress - 161 of 500
 
 | Day | [2015](year15) | [2016](year16) | [2017](year17) | [2018](year18) | [2019](year19) | [2020](year20) | [2021](year21) | [2022](year22) | [2023](year23) | [2024](year24)
 |:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:| :-: | :-: |
-| :star: | 37 | 26 | 15 | 11 | 12 | 18 | 19 | 15 | 2 | 2 |
+| :star: | 37 | 26 | 15 | 11 | 12 | 18 | 19 | 15 | 2 | 4 |
 |1| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal:| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-|2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | |
+|2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: |
 |3| :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | |
 |4| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | |
 |5| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | |
