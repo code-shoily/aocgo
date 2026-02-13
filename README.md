@@ -4,11 +4,23 @@
 
 [This](https://adventofcode.com). Every year since 2015, starting December 1 to 25, 25 small programming problems are presented on http://adventofcode.com. The challenges are fun to solve in programming language of your choice. I mostly solved those with [Elixir in the past](https://github.com/code-shoily/advent_of_code), but am looking forward to play with Golang in future challenges. And as I am trying really learn Go, I felt like I should backfill the old challenges throughout 2023. 
 
-More about Advent of Code here: [https://adventofcode.com/2022/about](https://adventofcode.com/2022/about).
+More about Advent of Code here: [https://adventofcode.com/2025/about](https://adventofcode.com/2025/about).
 
 ## How do I run these?
-* To create stubs for solving for instance, 2022/1, run: `go run main.go gen 2022 1` (also `g` instead of `gen`)
-* To run solution for the same, run: `go run main.go solve 2022 1` (also `run`, `r` or `s` instead of `solve`)
+* To create stubs for solving for instance, 2025/1, run: `go run main.go gen 2025 1` (also `g` instead of `gen`)
+* To run solution for the same, run: `go run main.go solve 2025 1` (also `run`, `r` or `s` instead of `solve`)
+
+### Using Makefile
+
+You can also use `make` to run these commands:
+
+* `make gen 2025 1` (or `make g ...`)
+* `make solve 2025 1` (or `make s ...`)
+* `make test` (run all tests)
+* `make test 2025` (run tests for 2025)
+* `make test 2025 1` (run tests for 2025 day 1)
+
+Defaults to current year and day if not specified.
 
 Note: The additional commands (i.e. `run`, `g` etc) are there because when I am rapidly testing solutions, I have often typed those and failed. So totally for my convenience that one.
 
@@ -18,16 +30,16 @@ Note, empty `input.txt` is create after `gen` (or `g`) command for now. You will
 
 **What version of Go do I need to use for these?**
 
-I am using `embed` and `generics` to solve problems. So at least go `1.18` is needed to run these. 
+I am using `embed` and `generics` to solve problems. So at least go `1.26` is needed to run these. 
 
 ## Progress - 161 of 500
 
-| Day | [2015](year15) | [2016](year16) | [2017](year17) | [2018](year18) | [2019](year19) | [2020](year20) | [2021](year21) | [2022](year22) | [2023](year23) | [2024](year24)
-|:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:| :-: | :-: |
-| :star: | 37 | 26 | 15 | 11 | 12 | 18 | 19 | 15 | 2 | 4 |
-|1| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal:| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: |
-|2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: |
-|3| :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | |
+| Day | [2015](year15) | [2016](year16) | [2017](year17) | [2018](year18) | [2019](year19) | [2020](year20) | [2021](year21) | [2022](year22) | [2023](year23) | [2024](year24) | [2025](year25)    
+|:---:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:| :-: | :-: | :-: |
+| :star: | 37 | 26 | 15 | 11 | 12 | 18 | 19 | 15 | 2 | 4 | |
+|1| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal:| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | |
+|2| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | |
+|3| :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | | |
 |4| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | |
 |5| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | |
 |6| :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | :1st_place_medal: | | |
